@@ -1,11 +1,5 @@
-@import url(fontawesome-all.min.css);
+@import url(../node_modules/font-awesome/css/font-awesome.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Open+Sans+Condensed:300,700");
-
-/*
-	Latitude by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
 
 .links {
   margin-top: 16px;
@@ -26,13 +20,9 @@
   top: 0;
   z-index: 2;
   background-color: #fff;
-  box-shadow: 0 4px 35px 0 rgba(0 0 0 0.1);
+  box-shadow: 0 4px 35px 0 rgba(0, 0, 0, 0.1);
 }
 
-.navbar h1 {
-
-  margin:0;
-}
 .header {
   position: relative;
   display: -webkit-box;
@@ -161,10 +151,6 @@ section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 ol,
 ul {
   list-style: none;
@@ -190,6 +176,8 @@ table {
 
 body {
   -webkit-text-size-adjust: none;
+  background: #ffffff;
+  line-height: 1;
 }
 
 mark {
@@ -221,10 +209,6 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-body {
-  background: #ffffff;
 }
 
 body.is-preload *,
@@ -2674,7 +2658,7 @@ body.landing #page-wrapper {
   cursor: default;
   height: 5.25em;
   left: 0;
-  line-height: 3.25em;  
+  line-height: 3.25em;
   /* position: fixed; */
   /* top: 0; */
   width: 100%;
@@ -2838,7 +2822,7 @@ body.landing #page-wrapper {
 
 #banner {
   background-color: #333c40;
-  background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+  background-image: url("assets/css/images/overlay.png"), url("assets/images/banner.jpg");
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
