@@ -4,7 +4,7 @@
 	pixelarity.com | hello@pixelarity.com
 	License: pixelarity.com/license
 -->
-<html>
+<html lang="en">
   <head>
     <title>e-Portfolio</title>
     <meta charset="utf-8" />
@@ -18,7 +18,7 @@
     <div id="page-wrapper">
       <!-- Header -->
       <header id="header" class="alt">
-        <h1><a href="index.html">Latitude</a></h1>
+        <h1><a href="index.html">e-Portfolio</a></h1>
         <nav id="nav">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -40,10 +40,6 @@
                 </li>
               </ul>
             </li>
-            <li><a href="left-sidebar.html">Left Sidebar</a></li>
-            <li><a href="right-sidebar.html">Right Sidebar</a></li>
-            <li><a href="no-sidebar.html">No Sidebar</a></li>
-            <li><a href="elements.html">Elements</a></li>
           </ul>
         </nav>
       </header>
@@ -51,11 +47,11 @@
       <!-- Banner -->
       <section id="banner">
         <div class="container">
-          <span class="logo">Latitude</span>
+          <span class="logo">Michael Justus</span>
           <header>
-            <h2>Magna phasellus consequat sed ipsum dolor</h2>
+            <h2>Software Architect and Engineer</h2>
             <p>
-              Feugiat cursus tempus adipiscing, phasellus sit amet lorem ipsum.
+              With over fifteen years' experience in IT developing software solutions and architectures.
             </p>
           </header>
         </div>
@@ -65,21 +61,21 @@
       <section id="intro" class="wrapper style1">
         <div class="container">
           <h2>
-            Etiam sed feugiat
-            <span
-              >consequat amet lorem phasellus sed ultrices<br />
-              imperdiet dolore lacus feugiat adipiscing magna consequat.</span
-            >
+            Masters of Computer Science
+            <br/>
+            <span>Pursuing personal education to 
+              expand understanding of the field and 
+              to add to existing experience.</span>
           </h2>
           <footer>
             <p>
-              Vestibulum viverra quam tortor ultricies convallis eros
-              condimentum. Vestibulum vulputate sagittis<br />
-              sem tincidunt sustincidunt vestibulum congue lorem natoque
-              penatibus et magnis dis parturient.
+              This section contains details related to my education journey in an MSc course 
+              related to Computer Science. The section outlines each unit's learning outcomes, artefacts, 
+              feedback or other data points relevant to the course and follows outputs as per 
+              requirements of University of Essex (Online).
             </p>
             <ul class="actions">
-              <li><a href="#" class="button large">Continue Reading</a></li>
+              <li><a href="info-msc.html" class="button large">Continue Reading</a></li>
             </ul>
           </footer>
         </div>
@@ -94,31 +90,27 @@
               <div class="col-3 col-12-narrow">
                 <div class="intro">
                   <h2>
-                    Amet veroeros<br />
-                    feugiat et dolor?
+                    Interesting Details
                   </h2>
                   <p>
-                    Sem et vestibulum lorem sed blandit consequat et ultrices
-                    nullam nisl lorem feugiat lorem ipsum consequat:
+                    The following features are available from this site:
                   </p>
                   <ul class="icon-bullets">
                     <li class="icon solid fa-chart-area">
-                      Lorem ipsum dolor amet
+                      About Me
                     </li>
-                    <li class="icon solid fa-cog">Nulla vel nisl consequat</li>
-                    <li class="icon solid fa-file">Feugiat veroeros lorem</li>
+                    <li class="icon solid fa-cog">MSc Modules</li>
                   </ul>
                 </div>
               </div>
               <div class="col-3 col-4-narrow col-12-mobile">
                 <section>
-                  <a href="#" class="image fit"
-                    ><img src="images/pic01.jpg" alt=""
-                  /></a>
-                  <h3>Nullam arcu consequat</h3>
+                  <a href="#" class="image fit">
+                      <img src="images/pic01.jpg" alt=""/>
+                    </a>
+                  <h3>Induction</h3>
                   <p>
-                    Phasellus dapibus sed convallis feugiat ipsum. Donec tesque
-                    turpis sed amet ultrices vestibulum nulla.
+                    This module deals with <b>Unit 1</b> and <b>Unit 2</b> focused on introducing students to the world of online study.
                   </p>
                   <ul class="actions">
                     <li><a href="#" class="button">Learn More</a></li>
@@ -127,13 +119,10 @@
               </div>
               <div class="col-3 col-4-narrow col-12-mobile">
                 <section>
-                  <a href="#" class="image fit"
-                    ><img src="images/pic02.jpg" alt=""
-                  /></a>
-                  <h3>Dapibus etiam lorem</h3>
+                  <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""/></a>
+                  <h3>Launching into Computer Science</h3>
                   <p>
-                    Phasellus dapibus sed convallis feugiat ipsum. Donec tesque
-                    turpis sed amet ultrices vestibulum nulla.
+                    
                   </p>
                   <ul class="actions">
                     <li><a href="#" class="button">Learn More</a></li>
