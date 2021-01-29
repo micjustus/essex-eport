@@ -1,6 +1,46 @@
 @import url(../node_modules/font-awesome/css/font-awesome.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Open+Sans+Condensed:300,700");
 
+article section p + p {
+  text-indent: 1.5em;
+}
+article section p + ul,
+article section p + ol {
+  margin-left: 1.5em;
+}
+div.arrow-right{
+  height: 120px;
+  margin: 1em 0 1em 0;
+  display: table;
+}
+div.arrow-right:after{
+    font-family: "FontAwesome";
+    content: "\f061";
+    vertical-align: middle;
+    font-weight: 900;
+    font-size: 2em;
+    display: table-cell;
+}
+
+.flex-centered{
+  justify-content: center;
+}
+.flex-container article.full-width{
+  width: 100%;
+}
+.stats-cell{
+  background-color: white;
+  border: 1px solid lightgray;
+  text-align: center;
+
+}
+.content{
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+   background-color:ivory
+}
+
 .course-module {
   margin: 0 auto;
   text-align: center;
@@ -10,6 +50,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 200px;
+  height: 120px;
+  margin: 1em;
 }
 
 .footerlinks {
@@ -87,7 +130,7 @@
   text-transform: none;
 }
 
-.content {
+.edge-padding {
   padding: 2em;
 }
 .flex-container {

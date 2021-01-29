@@ -1,16 +1,21 @@
-<div class="flex-container content">
+<div class="content">
+<div class="flex-container edge-padding">
   <aside>
-    <h3>Course Details</h3>
-    <p>Enrolment Date: 2021</p>
-    <p>Study Level: Postgraduate Certificate</p>
+    <h4>Course Details</h4>
+    <span>
+      Study Level: PG Cert<br/>
+      Enrolment Date: 2021<br/>
+      Duration: 8 months<br/>
+    </span>
 
+    <h4 style="margin-top:2em">University</h4>
     <a class="button" routerLink="/essex">Essex University</a>
   </aside>
 
   <article>
     <section>
-      <h2>Masters of Computer Science</h2>
-
+      <h2 style="margin-bottom:0">Masters of Computer Science</h2>
+      <h4>(Postgraduate Certificate)</h4>
       <span>
         This section contains details related to my education journey in an MSc
         course related to Computer Science. The section outlines each unit's
@@ -22,8 +27,8 @@
 
     <br/>
 
-    <section class="style1">
-      <h3>Course Modules</h3>
+    <section class="style2">
+      <h3>PGCert Course Modules</h3>
 
       <div class="flex-row row">
         <div *ngFor="let course of Modules" class="col-3 col-4-narrow col-12-mobile flex-cell course-module">
@@ -38,4 +43,13 @@
       </div>
     </section>
   </article>
+</div>
+
+<div>
+  <article>
+    <section class="style2">
+      <h2>Overall Musings</h2>
+    </section>
+  </article>
+</div>
 </div>
