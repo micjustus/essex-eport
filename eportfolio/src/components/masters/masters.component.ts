@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseModule } from 'src/courseModule';
+import { CourseModuleItem } from 'src/courseModule';
+import { DataService } from 'src/dataService';
+
+const MODULE_ROOT: string = "modules/";
 
 @Component({
   selector: 'app-masters.component',
@@ -8,12 +11,16 @@ import { CourseModule } from 'src/courseModule';
 })
 export class MastersComponent implements OnInit {
 
-  Modules: CourseModule[] = [];
+  Modules: CourseModuleItem[] = [];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.Modules.push(new CourseModule("Induction"));
-    this.Modules.push(new CourseModule("Launching into Computer Science"));
+    this.Modules.push(new CourseModuleItem("Induction", MODULE_ROOT + "induction", "", "../assets/images/essex_logo.png"));
+    this.Modules.push(new CourseModuleItem("Launching into Computer Science", MODULE_ROOT + "launching", "", "../assets/images/essex_logo.png"));
+  }
+
+  setCourse(data: CourseModuleItem){
+    this.dataService.selectedCourse = data;
   }
 }
