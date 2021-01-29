@@ -1,0 +1,25 @@
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+}
+.inline-block {
+  display: inline-block;
+}
+.connect-caption {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.layout-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+}
+.footer {
+  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.1);
+}

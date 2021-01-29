@@ -1,55 +1,63 @@
-<div class="content">
-<div class="flex-container edge-padding">
-  <aside>
-    <h4>Course Details</h4>
-    <span>
-      Study Level: PG Cert<br/>
-      Enrolment Date: 2021<br/>
-      Duration: 8 months<br/>
-    </span>
+<div class="content-w80 align-hcenter">
+  <div class="inline-block style2" >
 
-    <h4 style="margin-top:2em">University</h4>
-    <a class="button" routerLink="/essex">Essex University</a>
-  </aside>
+    <div class="inline-block">
+      <div>
+        <h2 class="course-title">Masters of Computer Science</h2>
+        <h4 class=course-title-sm>(Postgraduate Certificate)</h4>
+        <span>
+          This section contains details related to my education journey in an
+          MSc course related to Computer Science. The section outlines each
+          unit's learning outcomes, artefacts, feedback or other data points
+          relevant to the course and follows outputs as per requirements of
+          University of Essex (Online).
+        </span>
 
-  <article>
-    <section>
-      <h2 style="margin-bottom:0">Masters of Computer Science</h2>
-      <h4>(Postgraduate Certificate)</h4>
-      <span>
-        This section contains details related to my education journey in an MSc
-        course related to Computer Science. The section outlines each unit's
-        learning outcomes, artefacts, feedback or other data points relevant to
-        the course and follows outputs as per requirements of University of
-        Essex (Online).
-      </span>
-    </section>
+        <div class="flex-container-col">
+          <h4>Course Details</h4>
+          <span>
+            Study Level: PG Cert<br />
+            Enrolment Date: 2021<br />
+            Duration: 8 months<br />
+            University:<br/> <a class="button" routerLink="/essex">Why this one?</a>
+          </span>
 
-    <br/>
 
-    <section class="style2">
-      <h3>PGCert Course Modules</h3>
 
-      <div class="flex-row row">
-        <div *ngFor="let course of Modules" class="col-3 col-4-narrow col-12-mobile flex-cell course-module">
-          <img
-              class="moduleimage"
+        </div>
+
+      </div>
+
+      <br />
+
+      <div>
+        <h3>PGCert Course Modules</h3>
+
+        <div class="flex-row">
+          <div
+            *ngFor="let course of Modules"
+            class="col-3 col-4-narrow col-12-mobile flex-cell course-module"
+          >
+            <img
+              class="module-image"
               alt="course.imageUrl"
-              src="{{course.imageUrl}}"
-          />
-          <h4>{{course.Title}}</h4>
-          <a class="button" (click)="setCourse(course)" routerLink="/module" [state]="'{course}'">Learn More</a>
+              src="{{ course.imageUrl }}"
+            />
+            <h4>{{ course.Title }}</h4>
+            <a
+              class="button"
+              (click)="setCourse(course)"
+              routerLink="/module"
+              [state]="'{course}'"
+              >Learn More</a
+            >
+          </div>
         </div>
       </div>
-    </section>
-  </article>
-</div>
+    </div>
+  </div>
 
-<div>
-  <article>
-    <section class="style2">
-      <h2>Overall Musings</h2>
-    </section>
-  </article>
-</div>
+  <div class="inline-block style2">
+    <h2>Overall Musings</h2>
+  </div>
 </div>
