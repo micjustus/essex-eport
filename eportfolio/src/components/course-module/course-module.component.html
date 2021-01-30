@@ -1,47 +1,264 @@
-<div class="flex-container-col content-w80 align-hcenter">
-  <div class="menu" tabindex="0">
-    <div class="smartphone-menu-trigger"></div>
-    <header class="avatar">
-      <img alt="" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
-      <h2>John D.</h2>
-    </header>
-    <ul>
-      <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
-      <li tabindex="0" class="icon-customers"><span>Customers</span></li>
-      <li tabindex="0" class="icon-users"><span>Users</span></li>
-      <li tabindex="0" class="icon-settings"><span>Settings</span></li>
-    </ul>
+<div class="container">
+  <div class="row">
+
+    <div class="col hide-on-small-only m3 xl3 offset-xl1">
+      <div class="toc-wrapper pin-top" style="top: 0px">
+
+        <div style="height: 1px">
+          <ul class="section table-of-contents" name="toc" id="toc">
+            <li class='.nav-link' s="outcomes">
+              <a routerLink='/module' fragment="outcomes" >Learning Outcomes</a>
+            </li>
+            <li class='.nav-link' s="artefacts">
+              <a routerLink="/module" fragment="artefacts" routerLinkActive="active">Unit Artefacts</a>
+            </li>
+            <li class='.nav-link' s="writing">
+              <a routerLink='/module' fragment="writing">Reflective Writing</a>
+            </li>
+            <li class='.nav-link' s="notes">
+              <a routerLink='/module' fragment="notes">Team Notes</a>
+            </li>
+            <li class='.nav-link' s="matrix">
+              <a routerLink='/module' fragment="matrix">Skills Matrix</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+      <div>
+        <h2>Masters of Computer Science: <em>{{ course?.Title || '(Unspecified)' }}</em></h2>
+        <span>
+          {{ course?.Description || '(Unspecified)' }}
+        </span>
+      </div>
+
+      <br />
+
+      <div class="style1" id="outcomes">
+        <h3>Outcomes</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu non
+          diam phasellus vestibulum lorem sed risus. Quisque id diam vel quam.
+          Eros in cursus turpis massa tincidunt. Mauris rhoncus aenean vel elit
+          scelerisque mauris pellentesque pulvinar pellentesque. Tellus orci ac
+          auctor augue mauris augue. Erat imperdiet sed euismod nisi porta. Vel
+          pretium lectus quam id leo. Volutpat sed cras ornare arcu dui vivamus
+          arcu. Integer malesuada nunc vel risus commodo viverra maecenas
+          accumsan. Mi sit amet mauris commodo quis imperdiet. Augue mauris
+          augue neque gravida in fermentum et sollicitudin ac. Fusce ut placerat
+          orci nulla pellentesque dignissim enim. Amet luctus venenatis lectus
+          magna fringilla urna. Nullam eget felis eget nunc. Faucibus turpis in
+          eu mi bibendum neque. Sem integer vitae justo eget magna. Cras
+          tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Dui
+          vivamus arcu felis bibendum ut tristique. Pretium quam vulputate
+          dignissim suspendisse in est ante in nibh. At ultrices mi tempus
+          imperdiet nulla malesuada pellentesque elit eget. Sed nisi lacus sed
+          viverra tellus in hac habitasse. Dui nunc mattis enim ut tellus
+          elementum. Et ligula ullamcorper malesuada proin libero nunc. Ultrices
+          mi tempus imperdiet nulla malesuada. Auctor augue mauris augue neque.
+          Nunc mattis enim ut tellus elementum sagittis vitae et leo. Non quam
+          lacus suspendisse faucibus interdum posuere. Risus in hendrerit
+          gravida rutrum quisque non tellus orci ac. Laoreet id donec ultrices
+          tincidunt. Eget nullam non nisi est sit amet facilisis magna. Arcu
+          vitae elementum curabitur vitae nunc sed velit. Tristique risus nec
+          feugiat in fermentum posuere urna nec. Morbi tincidunt ornare massa
+          eget egestas purus viverra. Feugiat in fermentum posuere urna nec
+          tincidunt. Vitae congue mauris rhoncus aenean vel elit scelerisque
+          mauris pellentesque. Neque egestas congue quisque egestas diam. Ipsum
+          dolor sit amet consectetur adipiscing elit ut. Iaculis nunc sed augue
+          lacus viverra vitae congue. Et malesuada fames ac turpis egestas
+          integer eget. Id consectetur purus ut faucibus pulvinar elementum
+          integer. Amet consectetur adipiscing elit ut. Commodo quis imperdiet
+          massa tincidunt nunc pulvinar sapien et ligula. Tristique risus nec
+          feugiat in fermentum posuere urna nec tincidunt. Consequat mauris nunc
+          congue nisi vitae suscipit. Ultricies mi eget mauris pharetra et
+          ultrices neque ornare. Penatibus et magnis dis parturient montes
+          nascetur ridiculus.
+        </p>
+      </div>
+
+      <div class="style2" id="artefacts">
+        <h3>Module Artefacts</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu non
+          diam phasellus vestibulum lorem sed risus. Quisque id diam vel quam.
+          Eros in cursus turpis massa tincidunt. Mauris rhoncus aenean vel elit
+          scelerisque mauris pellentesque pulvinar pellentesque. Tellus orci ac
+          auctor augue mauris augue. Erat imperdiet sed euismod nisi porta. Vel
+          pretium lectus quam id leo. Volutpat sed cras ornare arcu dui vivamus
+          arcu. Integer malesuada nunc vel risus commodo viverra maecenas
+          accumsan. Mi sit amet mauris commodo quis imperdiet. Augue mauris
+          augue neque gravida in fermentum et sollicitudin ac. Fusce ut placerat
+          orci nulla pellentesque dignissim enim. Amet luctus venenatis lectus
+          magna fringilla urna. Nullam eget felis eget nunc. Faucibus turpis in
+          eu mi bibendum neque. Sem integer vitae justo eget magna. Cras
+          tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Dui
+          vivamus arcu felis bibendum ut tristique. Pretium quam vulputate
+          dignissim suspendisse in est ante in nibh. At ultrices mi tempus
+          imperdiet nulla malesuada pellentesque elit eget. Sed nisi lacus sed
+          viverra tellus in hac habitasse. Dui nunc mattis enim ut tellus
+          elementum. Et ligula ullamcorper malesuada proin libero nunc. Ultrices
+          mi tempus imperdiet nulla malesuada. Auctor augue mauris augue neque.
+          Nunc mattis enim ut tellus elementum sagittis vitae et leo. Non quam
+          lacus suspendisse faucibus interdum posuere. Risus in hendrerit
+          gravida rutrum quisque non tellus orci ac. Laoreet id donec ultrices
+          tincidunt. Eget nullam non nisi est sit amet facilisis magna. Arcu
+          vitae elementum curabitur vitae nunc sed velit. Tristique risus nec
+          feugiat in fermentum posuere urna nec. Morbi tincidunt ornare massa
+          eget egestas purus viverra. Feugiat in fermentum posuere urna nec
+          tincidunt. Vitae congue mauris rhoncus aenean vel elit scelerisque
+          mauris pellentesque. Neque egestas congue quisque egestas diam. Ipsum
+          dolor sit amet consectetur adipiscing elit ut. Iaculis nunc sed augue
+          lacus viverra vitae congue. Et malesuada fames ac turpis egestas
+          integer eget. Id consectetur purus ut faucibus pulvinar elementum
+          integer. Amet consectetur adipiscing elit ut. Commodo quis imperdiet
+          massa tincidunt nunc pulvinar sapien et ligula. Tristique risus nec
+          feugiat in fermentum posuere urna nec tincidunt. Consequat mauris nunc
+          congue nisi vitae suscipit. Ultricies mi eget mauris pharetra et
+          ultrices neque ornare. Penatibus et magnis dis parturient montes
+          nascetur ridiculus.
+        </p>
+      </div>
+
+      <div class="style1" id="writing">
+        <h3>Reflective Writing</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu non
+          diam phasellus vestibulum lorem sed risus. Quisque id diam vel quam.
+          Eros in cursus turpis massa tincidunt. Mauris rhoncus aenean vel elit
+          scelerisque mauris pellentesque pulvinar pellentesque. Tellus orci ac
+          auctor augue mauris augue. Erat imperdiet sed euismod nisi porta. Vel
+          pretium lectus quam id leo. Volutpat sed cras ornare arcu dui vivamus
+          arcu. Integer malesuada nunc vel risus commodo viverra maecenas
+          accumsan. Mi sit amet mauris commodo quis imperdiet. Augue mauris
+          augue neque gravida in fermentum et sollicitudin ac. Fusce ut placerat
+          orci nulla pellentesque dignissim enim. Amet luctus venenatis lectus
+          magna fringilla urna. Nullam eget felis eget nunc. Faucibus turpis in
+          eu mi bibendum neque. Sem integer vitae justo eget magna. Cras
+          tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Dui
+          vivamus arcu felis bibendum ut tristique. Pretium quam vulputate
+          dignissim suspendisse in est ante in nibh. At ultrices mi tempus
+          imperdiet nulla malesuada pellentesque elit eget. Sed nisi lacus sed
+          viverra tellus in hac habitasse. Dui nunc mattis enim ut tellus
+          elementum. Et ligula ullamcorper malesuada proin libero nunc. Ultrices
+          mi tempus imperdiet nulla malesuada. Auctor augue mauris augue neque.
+          Nunc mattis enim ut tellus elementum sagittis vitae et leo. Non quam
+          lacus suspendisse faucibus interdum posuere. Risus in hendrerit
+          gravida rutrum quisque non tellus orci ac. Laoreet id donec ultrices
+          tincidunt. Eget nullam non nisi est sit amet facilisis magna. Arcu
+          vitae elementum curabitur vitae nunc sed velit. Tristique risus nec
+          feugiat in fermentum posuere urna nec. Morbi tincidunt ornare massa
+          eget egestas purus viverra. Feugiat in fermentum posuere urna nec
+          tincidunt. Vitae congue mauris rhoncus aenean vel elit scelerisque
+          mauris pellentesque. Neque egestas congue quisque egestas diam. Ipsum
+          dolor sit amet consectetur adipiscing elit ut. Iaculis nunc sed augue
+          lacus viverra vitae congue. Et malesuada fames ac turpis egestas
+          integer eget. Id consectetur purus ut faucibus pulvinar elementum
+          integer. Amet consectetur adipiscing elit ut. Commodo quis imperdiet
+          massa tincidunt nunc pulvinar sapien et ligula. Tristique risus nec
+          feugiat in fermentum posuere urna nec tincidunt. Consequat mauris nunc
+          congue nisi vitae suscipit. Ultricies mi eget mauris pharetra et
+          ultrices neque ornare. Penatibus et magnis dis parturient montes
+          nascetur ridiculus.
+        </p>
+      </div>
+
+      <div class="style2" id="notes">
+        <h3>Meeting Notes</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu non
+          diam phasellus vestibulum lorem sed risus. Quisque id diam vel quam.
+          Eros in cursus turpis massa tincidunt. Mauris rhoncus aenean vel elit
+          scelerisque mauris pellentesque pulvinar pellentesque. Tellus orci ac
+          auctor augue mauris augue. Erat imperdiet sed euismod nisi porta. Vel
+          pretium lectus quam id leo. Volutpat sed cras ornare arcu dui vivamus
+          arcu. Integer malesuada nunc vel risus commodo viverra maecenas
+          accumsan. Mi sit amet mauris commodo quis imperdiet. Augue mauris
+          augue neque gravida in fermentum et sollicitudin ac. Fusce ut placerat
+          orci nulla pellentesque dignissim enim. Amet luctus venenatis lectus
+          magna fringilla urna. Nullam eget felis eget nunc. Faucibus turpis in
+          eu mi bibendum neque. Sem integer vitae justo eget magna. Cras
+          tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Dui
+          vivamus arcu felis bibendum ut tristique. Pretium quam vulputate
+          dignissim suspendisse in est ante in nibh. At ultrices mi tempus
+          imperdiet nulla malesuada pellentesque elit eget. Sed nisi lacus sed
+          viverra tellus in hac habitasse. Dui nunc mattis enim ut tellus
+          elementum. Et ligula ullamcorper malesuada proin libero nunc. Ultrices
+          mi tempus imperdiet nulla malesuada. Auctor augue mauris augue neque.
+          Nunc mattis enim ut tellus elementum sagittis vitae et leo. Non quam
+          lacus suspendisse faucibus interdum posuere. Risus in hendrerit
+          gravida rutrum quisque non tellus orci ac. Laoreet id donec ultrices
+          tincidunt. Eget nullam non nisi est sit amet facilisis magna. Arcu
+          vitae elementum curabitur vitae nunc sed velit. Tristique risus nec
+          feugiat in fermentum posuere urna nec. Morbi tincidunt ornare massa
+          eget egestas purus viverra. Feugiat in fermentum posuere urna nec
+          tincidunt. Vitae congue mauris rhoncus aenean vel elit scelerisque
+          mauris pellentesque. Neque egestas congue quisque egestas diam. Ipsum
+          dolor sit amet consectetur adipiscing elit ut. Iaculis nunc sed augue
+          lacus viverra vitae congue. Et malesuada fames ac turpis egestas
+          integer eget. Id consectetur purus ut faucibus pulvinar elementum
+          integer. Amet consectetur adipiscing elit ut. Commodo quis imperdiet
+          massa tincidunt nunc pulvinar sapien et ligula. Tristique risus nec
+          feugiat in fermentum posuere urna nec tincidunt. Consequat mauris nunc
+          congue nisi vitae suscipit. Ultricies mi eget mauris pharetra et
+          ultrices neque ornare. Penatibus et magnis dis parturient montes
+          nascetur ridiculus.
+        </p>
+      </div>
+
+      <div class="style1" id="matrix">
+        <h3>Skills Matrix</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu non
+          diam phasellus vestibulum lorem sed risus. Quisque id diam vel quam.
+          Eros in cursus turpis massa tincidunt. Mauris rhoncus aenean vel elit
+          scelerisque mauris pellentesque pulvinar pellentesque. Tellus orci ac
+          auctor augue mauris augue. Erat imperdiet sed euismod nisi porta. Vel
+          pretium lectus quam id leo. Volutpat sed cras ornare arcu dui vivamus
+          arcu. Integer malesuada nunc vel risus commodo viverra maecenas
+          accumsan. Mi sit amet mauris commodo quis imperdiet. Augue mauris
+          augue neque gravida in fermentum et sollicitudin ac. Fusce ut placerat
+          orci nulla pellentesque dignissim enim. Amet luctus venenatis lectus
+          magna fringilla urna. Nullam eget felis eget nunc. Faucibus turpis in
+          eu mi bibendum neque. Sem integer vitae justo eget magna. Cras
+          tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Dui
+          vivamus arcu felis bibendum ut tristique. Pretium quam vulputate
+          dignissim suspendisse in est ante in nibh. At ultrices mi tempus
+          imperdiet nulla malesuada pellentesque elit eget. Sed nisi lacus sed
+          viverra tellus in hac habitasse. Dui nunc mattis enim ut tellus
+          elementum. Et ligula ullamcorper malesuada proin libero nunc. Ultrices
+          mi tempus imperdiet nulla malesuada. Auctor augue mauris augue neque.
+          Nunc mattis enim ut tellus elementum sagittis vitae et leo. Non quam
+          lacus suspendisse faucibus interdum posuere. Risus in hendrerit
+          gravida rutrum quisque non tellus orci ac. Laoreet id donec ultrices
+          tincidunt. Eget nullam non nisi est sit amet facilisis magna. Arcu
+          vitae elementum curabitur vitae nunc sed velit. Tristique risus nec
+          feugiat in fermentum posuere urna nec. Morbi tincidunt ornare massa
+          eget egestas purus viverra. Feugiat in fermentum posuere urna nec
+          tincidunt. Vitae congue mauris rhoncus aenean vel elit scelerisque
+          mauris pellentesque. Neque egestas congue quisque egestas diam. Ipsum
+          dolor sit amet consectetur adipiscing elit ut. Iaculis nunc sed augue
+          lacus viverra vitae congue. Et malesuada fames ac turpis egestas
+          integer eget. Id consectetur purus ut faucibus pulvinar elementum
+          integer. Amet consectetur adipiscing elit ut. Commodo quis imperdiet
+          massa tincidunt nunc pulvinar sapien et ligula. Tristique risus nec
+          feugiat in fermentum posuere urna nec tincidunt. Consequat mauris nunc
+          congue nisi vitae suscipit. Ultricies mi eget mauris pharetra et
+          ultrices neque ornare. Penatibus et magnis dis parturient montes
+          nascetur ridiculus.
+        </p>
+      </div>
+    </div>
+
+
   </div>
-
-  <div style="display:inline-block">
-    <div>
-      <h2>Masters of Computer Science: {{ course.Title }}</h2>
-      <span>
-        {{course.Description}}
-      </span>
-    </div>
-
-    <br/>
-
-    <div class="style1">
-      <h3>Outcomes</h3>
-    </div>
-
-    <div class="style2">
-      <h3>Module Artefacts</h3>
-    </div>
-
-    <div class="style1">
-      <h3>Reflective Writing</h3>
-    </div>
-
-    <div class="style2">
-      <h3>Meeting Notes</h3>
-    </div>
-
-    <div class="style1">
-      <h3>Skills Matrix</h3>
-    </div>
-  </div>
-
 </div>
+
+

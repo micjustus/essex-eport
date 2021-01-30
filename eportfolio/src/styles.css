@@ -48,6 +48,11 @@
   vertical-align: middle;
   text-align: center;
 }
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
 .connect-caption {
   text-transform: uppercase;
   text-decoration: none;
@@ -64,6 +69,7 @@
   text-align: center;
 }
 .course-title-sm {
+  margin-top: 0;
   margin-bottom: 2em;
   text-align: center;
 }
@@ -170,6 +176,9 @@
   background-color: white;
 }
 /* HTML Elements */
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
@@ -234,4 +243,90 @@ div.arrow-right:after {
   font-weight: 900;
   font-size: 2em;
   display: table-cell;
+}
+/* Table of Contents */
+.buysellads {
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+.toc-wrapper {
+  position: relative;
+  margin-top: 42px;
+}
+.pinned {
+  position: fixed !important;
+}
+.pin-top,
+.pin-bottom {
+  position: relative;
+}
+.table-of-contents a {
+  font-weight: 300;
+  color: #757575;
+  padding-left: 16px;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.4;
+  display: inline-block;
+}
+ul.table-of-contents {
+  margin-top: 0;
+  padding-top: 48px;
+  position: fixed;
+  width: 20%;
+}
+.table-of-contents li {
+  padding: 5px 20px 5px 5px;
+  list-style: none;
+}
+.table-of-contents li.active {
+  font-weight: bold;
+  border-right: 5px solid #ee6e73;
+}
+.table-of-contents li.active a {
+  font-weight: bold;
+}
+.row .col.s12 {
+  width: 100%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+.row .col {
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 0.75rem;
+  min-height: 1px;
+}
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* MEDIA QUERIES */
+@media screen and (min-width: 601px) {
+  .container {
+    width: 100%;
+  }
+  .container .row .col.offset-m1 {
+    margin-left: 8.33333333%;
+  }
+  .container .row .col.m3 {
+    width: 25%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+  }
+  .container .row .col.m8 {
+    width: 66.66666667%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+  }
 }
