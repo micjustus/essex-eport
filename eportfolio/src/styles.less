@@ -321,7 +321,7 @@ ul.table-of-contents {
   margin-top: 0;
   padding-top: 48px;
   position:fixed;
-  width: 20%;
+  max-width: 250px;
 }
 
 .table-of-contents li {
@@ -331,8 +331,9 @@ ul.table-of-contents {
 
 .table-of-contents li.active {
   font-weight: bold;
-  //padding-left: 14px;
-  border-right: 5px solid #ee6e73;
+  border: 1px solid #ee6e73;
+  border-radius: 6px;
+  background-color: rgba(238, 110, 115, 0.02);
 }
 
 .table-of-contents li.active a {

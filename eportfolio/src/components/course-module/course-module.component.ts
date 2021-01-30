@@ -3,53 +3,57 @@ import { ActivatedRoute } from '@angular/router';
 import { CourseModuleItem } from 'src/courseModule';
 import { DataService } from 'src/dataService';
 
-import scrollSpy from '@sidsbrmnn/scrollspy';
-
 let hasScrolled: boolean = false;
 let timeoutHandler: number | undefined;
 let previousHighlight: Element;
+let checking: boolean = false;
 
 function scrollFunc(): void {
-  hasScrolled = true;
-  console.log('scroll check warranted');
+  if (timeoutHandler) {
+    console.log('skipped');
+    return;
+  }
+
+  timeoutHandler = window.setTimeout(checkHeadings, 10);
 }
 
 function checkHeadings(): void {
-  if (!hasScrolled) return;
+  //if (!hasScrolled) return;
 
-  // find the '.nav-link' closest to the top of the viewport
   var toc = document.querySelector('#toc');
   var elms = toc?.getElementsByClassName('.nav-link');
-  console.log('found ' + elms?.length + ' elements to check');
+  if (!elms || !elms?.length) return;
 
   var smallest = -1;
-  var menuItem: Element;
+  var menuItem: Element | undefined = undefined;
 
-  if (elms) {
-    for (var index = 0; index < elms?.length; index++) {
-      var val = elms[index];
-      var attr = val.getAttribute('s');
+  for (var index = 0; index < elms?.length; index++) {
+    var elm = elms[index];
+    var attr = elm.getAttribute('nav-id');
 
-      var div = document.getElementById(attr || '');
-      if (!div) continue;
+    var div = document.getElementById(attr || '');
+    if (!div) continue;
 
-      var rect = div.getBoundingClientRect();
-      if (rect.y < 0) continue;
+    var rect = div.getBoundingClientRect();
+    if (rect.y < 0) continue;
 
-      if (smallest == -1 || rect.y < smallest) {
-        smallest = rect.y;
-        menuItem = val;
-      }
+    if (smallest == -1 || rect.y < smallest) {
+      smallest = rect.y;
+      menuItem = elm;
     }
 
-    if (menuItem) {
-      if (previousHighlight) previousHighlight.classList.remove('active');
-      menuItem.classList.add('active');
+    if (!menuItem) continue;
 
-      previousHighlight = menuItem;
-    }
+    if (previousHighlight) previousHighlight.classList.remove('active');
+    previousHighlight = menuItem;
+
+    menuItem.classList.add('active');
+    break;
   }
-  hasScrolled = false;
+
+  //hasScrolled = false;
+  window.clearTimeout(timeoutHandler);
+  timeoutHandler = undefined;
 }
 
 @Component({
@@ -67,12 +71,14 @@ export class CourseModuleComponent implements OnInit {
 
   ngOnInit(): void {
     this.course = this.dataService.selectedCourse;
+
+    hasScrolled = true;
     document.addEventListener('scroll', scrollFunc);
-    timeoutHandler = window.setInterval(checkHeadings, 100);
+    // timeoutHandler = window.setInterval(checkHeadings, 100);
   }
 
   ngOnDestroy(): void {
     document.removeEventListener('scroll', scrollFunc);
-    window.clearInterval(timeoutHandler);
+    // window.clearInterval(timeoutHandler);
   }
 }

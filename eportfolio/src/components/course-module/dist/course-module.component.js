@@ -11,42 +11,46 @@ var core_1 = require("@angular/core");
 var hasScrolled = false;
 var timeoutHandler;
 var previousHighlight;
+var checking = false;
 function scrollFunc() {
-    hasScrolled = true;
-    console.log('scroll check warranted');
+    if (timeoutHandler) {
+        console.log('skipped');
+        return;
+    }
+    timeoutHandler = window.setTimeout(checkHeadings, 10);
 }
 function checkHeadings() {
-    if (!hasScrolled)
-        return;
-    // find the '.nav-link' closest to the top of the viewport
+    //if (!hasScrolled) return;
     var toc = document.querySelector('#toc');
     var elms = toc === null || toc === void 0 ? void 0 : toc.getElementsByClassName('.nav-link');
-    console.log('found ' + (elms === null || elms === void 0 ? void 0 : elms.length) + ' elements to check');
+    if (!elms || !(elms === null || elms === void 0 ? void 0 : elms.length))
+        return;
     var smallest = -1;
-    var menuItem;
-    if (elms) {
-        for (var index = 0; index < (elms === null || elms === void 0 ? void 0 : elms.length); index++) {
-            var val = elms[index];
-            var attr = val.getAttribute('s');
-            var div = document.getElementById(attr || '');
-            if (!div)
-                continue;
-            var rect = div.getBoundingClientRect();
-            if (rect.y < 0)
-                continue;
-            if (smallest == -1 || rect.y < smallest) {
-                smallest = rect.y;
-                menuItem = val;
-            }
+    var menuItem = undefined;
+    for (var index = 0; index < (elms === null || elms === void 0 ? void 0 : elms.length); index++) {
+        var elm = elms[index];
+        var attr = elm.getAttribute('nav-id');
+        var div = document.getElementById(attr || '');
+        if (!div)
+            continue;
+        var rect = div.getBoundingClientRect();
+        if (rect.y < 0)
+            continue;
+        if (smallest == -1 || rect.y < smallest) {
+            smallest = rect.y;
+            menuItem = elm;
         }
-        if (menuItem) {
-            if (previousHighlight)
-                previousHighlight.classList.remove('active');
-            menuItem.classList.add('active');
-            previousHighlight = menuItem;
-        }
+        if (!menuItem)
+            continue;
+        if (previousHighlight)
+            previousHighlight.classList.remove('active');
+        previousHighlight = menuItem;
+        menuItem.classList.add('active');
+        break;
     }
-    hasScrolled = false;
+    //hasScrolled = false;
+    window.clearTimeout(timeoutHandler);
+    timeoutHandler = undefined;
 }
 var CourseModuleComponent = /** @class */ (function () {
     function CourseModuleComponent(route, dataService) {
@@ -55,12 +59,13 @@ var CourseModuleComponent = /** @class */ (function () {
     }
     CourseModuleComponent.prototype.ngOnInit = function () {
         this.course = this.dataService.selectedCourse;
+        hasScrolled = true;
         document.addEventListener('scroll', scrollFunc);
-        timeoutHandler = window.setInterval(checkHeadings, 100);
+        // timeoutHandler = window.setInterval(checkHeadings, 100);
     };
     CourseModuleComponent.prototype.ngOnDestroy = function () {
         document.removeEventListener('scroll', scrollFunc);
-        window.clearInterval(timeoutHandler);
+        // window.clearInterval(timeoutHandler);
     };
     __decorate([
         core_1.Input()
