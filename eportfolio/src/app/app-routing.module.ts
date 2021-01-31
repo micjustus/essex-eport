@@ -6,6 +6,7 @@ import { EssexComponent } from 'src/components/essex/essex.component';
 import { IndexComponent } from 'src/components/index/index.component';
 import { MastersComponent } from 'src/components/masters/masters.component';
 import { NotFoundComponent } from 'src/components/not-found/not-found.component';
+import { ReflectionsComponent } from 'src/components/reflections/reflections.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
@@ -13,11 +14,12 @@ const routes: Routes = [
   { path: 'studies', component: MastersComponent },
   { path: 'essex', component: EssexComponent },
   { path: 'module', component: CourseModuleComponent},
+  { path: "reflections", component: ReflectionsComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
 const routerOptions: ExtraOptions = {
-  scrollPositionRestoration: 'disabled',
+  scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
   scrollOffset: [0, 64],
 };

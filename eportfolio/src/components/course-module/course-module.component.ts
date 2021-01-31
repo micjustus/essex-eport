@@ -2,24 +2,18 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CourseModuleItem } from 'src/courseModule';
 import { DataService } from 'src/dataService';
+import { Reflection } from '../masters/Reflection';
 
-let hasScrolled: boolean = false;
 let timeoutHandler: number | undefined;
 let previousHighlight: Element;
-let checking: boolean = false;
 
 function scrollFunc(): void {
-  if (timeoutHandler) {
-    console.log('skipped');
-    return;
-  }
+  if (timeoutHandler) return;
 
-  timeoutHandler = window.setTimeout(checkHeadings, 10);
+  timeoutHandler = window.setTimeout(checkHeadings, 20);
 }
 
 function checkHeadings(): void {
-  //if (!hasScrolled) return;
-
   var toc = document.querySelector('#toc');
   var elms = toc?.getElementsByClassName('.nav-link');
   if (!elms || !elms?.length) return;
@@ -28,7 +22,9 @@ function checkHeadings(): void {
   var menuItem: Element | undefined = undefined;
 
   for (var index = 0; index < elms?.length; index++) {
-    var elm = elms[index];
+    var elm = elms[index] || null;
+    if (!elm) continue;
+
     var attr = elm.getAttribute('nav-id');
 
     var div = document.getElementById(attr || '');
@@ -51,10 +47,11 @@ function checkHeadings(): void {
     break;
   }
 
-  //hasScrolled = false;
   window.clearTimeout(timeoutHandler);
   timeoutHandler = undefined;
 }
+
+// This is the important part!
 
 @Component({
   selector: 'app-course-module',
@@ -72,13 +69,37 @@ export class CourseModuleComponent implements OnInit {
   ngOnInit(): void {
     this.course = this.dataService.selectedCourse;
 
-    hasScrolled = true;
     document.addEventListener('scroll', scrollFunc);
-    // timeoutHandler = window.setInterval(checkHeadings, 100);
+    checkHeadings();
   }
 
   ngOnDestroy(): void {
     document.removeEventListener('scroll', scrollFunc);
-    // window.clearInterval(timeoutHandler);
+  }
+
+  setPiece(writing: Reflection){
+    this.dataService.selectedWriting = writing;
+  }
+
+  setElemHeight(evt: Event, id:string){
+    //evt.preventDefault();
+
+    var elm = document.getElementById(id);
+    if (!elm) return;
+
+    var first = elm.hasAttribute("data-collapsed");
+    var collapsed =  elm.getAttribute("data-collapsed") == 'true';
+    console.log("collapsed state=" + collapsed);
+
+    if (!first || collapsed){
+      var height = elm?.scrollHeight;
+      elm.style.height = height + "px";
+      elm.style.opacity='1';
+      elm.setAttribute("data-collapsed", 'false');
+    } else{
+      elm.style.height='0';
+      elm.style.opacity='0';
+      elm.setAttribute("data-collapsed", 'true');
+    }
   }
 }

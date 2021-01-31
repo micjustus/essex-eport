@@ -1,0 +1,21 @@
+<div class="content-w80 align-hcenter">
+
+      <div>
+        <h2 class="course-title">Reflective Writing</h2>
+        <h4 class="course-title-sm">{{ item.Title }}</h4>
+        <span>
+          {{ item.Description }}
+        </span>
+      </div>
+
+      <br />
+
+      <div>
+        <h3>Thoughts and Reflections</h3>
+
+        <div markdown [src]="'assets/artefacts/reflections/' + item.Content" class="flex-row">
+
+        </div>
+      </div>
+
+</div>

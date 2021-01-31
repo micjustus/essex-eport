@@ -15,16 +15,18 @@ var essex_component_1 = require("src/components/essex/essex.component");
 var index_component_1 = require("src/components/index/index.component");
 var masters_component_1 = require("src/components/masters/masters.component");
 var not_found_component_1 = require("src/components/not-found/not-found.component");
+var reflections_component_1 = require("src/components/reflections/reflections.component");
 var routes = [
     { path: '', component: index_component_1.IndexComponent },
     { path: 'about', component: about_component_1.AboutComponent },
     { path: 'studies', component: masters_component_1.MastersComponent },
     { path: 'essex', component: essex_component_1.EssexComponent },
     { path: 'module', component: course_module_component_1.CourseModuleComponent },
+    { path: "reflections", component: reflections_component_1.ReflectionsComponent },
     { path: '**', component: not_found_component_1.NotFoundComponent }
 ];
 var routerOptions = {
-    scrollPositionRestoration: 'disabled',
+    scrollPositionRestoration: 'enabled',
     anchorScrolling: 'enabled',
     scrollOffset: [0, 64]
 };

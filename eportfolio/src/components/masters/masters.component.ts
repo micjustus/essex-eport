@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseModuleItem } from 'src/courseModule';
 import { DataService } from 'src/dataService';
+import { InductionModuleItem } from './InductionModuleItem';
+import { LaunchingCSModuleItem } from './LaunchingCSModuleItem';
 
 const MODULE_ROOT: string = "modules/";
 
@@ -16,8 +18,8 @@ export class MastersComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.Modules.push(new CourseModuleItem("Induction", MODULE_ROOT + "induction", "", "../assets/images/essex_logo.png"));
-    this.Modules.push(new CourseModuleItem("Launching into Computer Science", MODULE_ROOT + "launching", "", "../assets/images/essex_logo.png"));
+    this.Modules.push(new InductionModuleItem(MODULE_ROOT + "induction"));
+    this.Modules.push(new LaunchingCSModuleItem(MODULE_ROOT + "launching"));
   }
 
   setCourse(data: CourseModuleItem){

@@ -12,6 +12,9 @@ import { IndexComponent } from '../components/index/index.component';
 import { EssexComponent } from '../components/essex/essex.component';
 import { CourseModuleComponent } from '../components/course-module/course-module.component';
 import { DataService } from 'src/dataService';
+import { ReflectionsComponent } from '../components/reflections/reflections.component';
+import { MarkdownModule } from 'ngx-markdown';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,14 @@ import { DataService } from 'src/dataService';
     NotFoundComponent,
     IndexComponent,
     EssexComponent,
-    CourseModuleComponent
+    CourseModuleComponent,
+    ReflectionsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MarkdownModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
