@@ -1,10 +1,78 @@
-<div class="top-navbar">
+<!-- <div class="top-navbar">
   <div class="flex-header">
-    <span class="author">Michael Justus</span>
-
-  <div >
+    <div class="author">Michael Justus</div>
+    <div>
   <a class="links" routerLink="/studies" routerLinkActive="active">Studies</a>
   <a class="links" routerLink="/about" routerLinkActive="active">About</a>
 </div>
+  </div>
+
+</div> -->
+
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="relative bg-white">
+  <div class="w-full px-4 sm:px-6">
+    <div class="flex items-center border-b-2 border-gray-100 py-6  md:space-x-10">
+      <div class="flex-none justify-start w-max">
+        <a href="#">
+          <span class="">Michael Justus</span>
+        </a>
+      </div>
+
+      <nav class="flex items-center justify-center w-full -m-10">
+        <div class="relative">
+          <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+          <a routerLink="/studies" class="group object-center bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <span>Studies</span>
+            <!--
+              Heroicon name: chevron-down
+
+              Item active: "text-gray-600", Item inactive: "text-gray-400"
+            -->
+            <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+
+        <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          About Me
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!--
+    Mobile menu, show/hide based on mobile menu state.
+
+    Entering: "duration-200 ease-out"
+      From: "opacity-0 scale-95"
+      To: "opacity-100 scale-100"
+    Leaving: "duration-100 ease-in"
+      From: "opacity-100 scale-100"
+      To: "opacity-0 scale-95"
+  -->
+  <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+    <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+      <div class="pt-5 pb-6 px-5">
+        <div class="flex items-center justify-between">
+          <div>
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+          </div>
+          <div class="-mr-2">
+            <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <span class="sr-only">Close menu</span>
+              <!-- Heroicon name: x -->
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>

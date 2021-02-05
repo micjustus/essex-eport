@@ -49,7 +49,7 @@
 
       <br />
 
-      <div id="outcomes">
+      <div id="outcomes" class="course-section">
         <h3>Outcomes</h3>
         <ol>
           <li *ngFor="let outcome of course.Outcomes">
@@ -58,7 +58,7 @@
         </ol>
       </div>
 
-      <div id="artefacts">
+      <div id="artefacts" class="course-section">
         <h3>Module Artefacts</h3>
         <div>
           <div *ngFor="let art of course.Artefacts" class="course-artefact">
@@ -86,9 +86,9 @@
         </div>
       </div>
 
-      <div id="writing">
-        <h3>Reflective Writing</h3>
-          <div *ngFor="let ref of course.Reflections; let i = index" class="course-artefact">
+      <div id="writing" class="course-section">
+            <h3>Reflective Writing</h3>
+          <div *ngFor="let ref of course.Reflections; let i = index" class="course-artefact ">
             <img
               src=""
               alt="Reflection"
@@ -98,7 +98,7 @@
             <div class="in-flex-col collapsible" >
               <input type="checkbox" id="checkbox-{{i}}" />
               <label class="checkbox-label" for="checkbox-{{i}}" (click)="setElemHeight($event, 'expander-' + i)">
-                <h3>{{ ref.Title }}</h3>
+                <strong class="collapse-title">{{ ref.Title }}</strong>
               </label>
               <div class="collapse-content" id="expander-{{i}}">
                 <p><em [innerHTML]="ref.Description"></em></p>
@@ -106,9 +106,10 @@
               </div>
             </div>
           </div>
+
       </div>
 
-      <div id="notes">
+      <div id="notes" class="course-section">
         <h3>Meeting Notes</h3>
         <div>
           <div *ngIf="!course.Notes.length" style="text-align: center;">
@@ -136,7 +137,7 @@
         </div>
       </div>
 
-      <div id="matrix">
+      <div id="matrix" class="course-section">
         <h3>Skills Matrix</h3>
         <blockquote class="grapefruit">
           <h3>
