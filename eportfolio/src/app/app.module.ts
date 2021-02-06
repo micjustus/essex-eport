@@ -15,6 +15,8 @@ import { DataService } from 'src/dataService';
 import { ReflectionsComponent } from '../components/reflections/reflections.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClientModule } from '@angular/common/http';
+import { HeroComponent } from '../components/hero/hero.component';
+import { StudiesComponent } from '../components/studies/studies.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     IndexComponent,
     EssexComponent,
     CourseModuleComponent,
-    ReflectionsComponent
+    ReflectionsComponent,
+    HeroComponent,
+    StudiesComponent
   ],
   imports: [
     BrowserModule,

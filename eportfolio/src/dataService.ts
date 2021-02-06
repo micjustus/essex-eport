@@ -6,4 +6,5 @@ import { CourseModuleItem } from "./courseModule";
 export class DataService{
   selectedCourse!: CourseModuleItem;
   selectedWriting!: Reflection;
+  currentModule!: CourseModuleItem;
 }

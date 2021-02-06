@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CourseModuleItem } from 'src/courseModule';
 import { DataService } from 'src/dataService';
 import { Reflection } from '../masters/Reflection';
@@ -60,46 +61,55 @@ function checkHeadings(): void {
 })
 export class CourseModuleComponent implements OnInit {
   @Input() course!: CourseModuleItem;
+  private subs: Subscription;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private dataService: DataService
-  ) {}
+  ) {
+    if (!this.dataService.selectedCourse) {
+      this.router.navigate(['/studies'], {});
+    } else {
+      this.subs = this.route.params.subscribe((params) => {
+        this.course = this.dataService.selectedCourse;
+      });
+    }
+  }
 
   ngOnInit(): void {
     this.course = this.dataService.selectedCourse;
-
-    document.addEventListener('scroll', scrollFunc);
     checkHeadings();
   }
 
   ngOnDestroy(): void {
+    if (this.subs) this.subs.unsubscribe();
     document.removeEventListener('scroll', scrollFunc);
   }
 
-  setPiece(writing: Reflection){
+  setPiece(writing: Reflection) {
     this.dataService.selectedWriting = writing;
   }
 
-  setElemHeight(evt: Event, id:string){
+  setElemHeight(evt: Event, id: string) {
     //evt.preventDefault();
 
     var elm = document.getElementById(id);
     if (!elm) return;
 
-    var first = elm.hasAttribute("data-collapsed");
-    var collapsed =  elm.getAttribute("data-collapsed") == 'true';
-    console.log("collapsed state=" + collapsed);
+    var first = elm.hasAttribute('data-collapsed');
+    var collapsed = elm.getAttribute('data-collapsed') == 'true';
+    console.log('collapsed state=' + collapsed);
 
-    if (!first || collapsed){
+    if (!first || collapsed) {
       var height = elm?.scrollHeight;
-      elm.style.height = height + "px";
-      elm.style.opacity='1';
-      elm.setAttribute("data-collapsed", 'false');
-    } else{
-      elm.style.height='0';
-      elm.style.opacity='0';
-      elm.setAttribute("data-collapsed", 'true');
+      elm.style.height = height + 'px';
+      elm.style.opacity = '1';
+      elm.setAttribute('data-collapsed', 'false');
+    } else {
+      elm.style.height = '0';
+      elm.style.opacity = '0';
+      elm.setAttribute('data-collapsed', 'true');
     }
   }
 }
