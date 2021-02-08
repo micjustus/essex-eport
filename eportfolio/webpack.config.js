@@ -10,35 +10,25 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [
-        "node_modules",
-        "src/node_modules/@fortawesome/fontawesome-free/"
+        "node_modules"
       ]
     }
   })
 }
 
 module.exports = {
-  resolve: {
-    extensions: []
-},
   module: {
-
-
     rules: [
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: "postcss-loader",
-        options: {
-          postcssOptions: {
-            plugins: [
-              require("postcss-import"),
-              require("tailwindcss"),
-              purgecss,
-              require("autoprefixer"),
-            ]
-          },
-        },
+        use:[
+
+          {
+            loader: "postcss-loader",
+          }
+        ]
+
       },
     ],
   },
