@@ -1,6 +1,6 @@
-import { Artefact } from "./components/masters/Artefact";
-import { Reflection } from "./components/masters/Reflection";
-import { TeamNote } from "./components/masters/TeamNote";
+import { Artefact } from "./Artefact";
+import { Reflection } from "./Reflection";
+import { TeamNote } from "./TeamNote";
 
 export class ModuleUnit{
   public Title!: string;

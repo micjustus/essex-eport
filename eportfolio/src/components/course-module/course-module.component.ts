@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CourseModuleItem } from 'src/courseModule';
-import { DataService } from 'src/dataService';
-import { Reflection } from '../masters/Reflection';
+import { CourseModuleItem } from 'src/data/courseModule';
+import { DataService } from 'src/data/dataService';
+import { Reflection } from 'src/data/Reflection';
+
 
 let timeoutHandler: number | undefined;
 let previousHighlight: Element;

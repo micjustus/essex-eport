@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DataService } from 'src/dataService';
-import { Reflection } from '../masters/Reflection';
+import { DataService } from 'src/data/dataService';
+import { Reflection } from 'src/data/Reflection';
+
 
 @Component({
   selector: 'app-reflections',

@@ -11,13 +11,13 @@ import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { IndexComponent } from '../components/index/index.component';
 import { EssexComponent } from '../components/essex/essex.component';
 import { CourseModuleComponent } from '../components/course-module/course-module.component';
-import { DataService } from 'src/dataService';
 import { ReflectionsComponent } from '../components/reflections/reflections.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroComponent } from '../components/hero/hero.component';
 import { StudiesComponent } from '../components/studies/studies.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { DataService } from 'src/data/dataService';
 
 @NgModule({
   declarations: [

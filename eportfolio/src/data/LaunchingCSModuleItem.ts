@@ -1,4 +1,4 @@
-import { CourseModuleItem } from 'src/courseModule';
+import { CourseModuleItem } from "./courseModule";
 
 export class LaunchingCSModuleItem extends CourseModuleItem {
   constructor(path: string) {

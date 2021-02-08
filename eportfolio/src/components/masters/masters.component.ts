@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CourseModuleItem } from 'src/courseModule';
-import { DataService } from 'src/dataService';
+import { CourseModuleItem } from 'src/data/courseModule';
+import { DataService } from 'src/data/dataService';
+
 
 
 @Component({

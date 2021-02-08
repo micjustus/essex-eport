@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CourseModuleItem } from 'src/courseModule';
-import { DataService } from 'src/dataService';
-import { InductionModuleItem } from '../masters/InductionModuleItem';
-import { LaunchingCSModuleItem } from '../masters/LaunchingCSModuleItem';
+import { CourseModuleItem } from 'src/data/courseModule';
+import { DataService } from 'src/data/dataService';
+import { InductionModuleItem } from 'src/data/InductionModuleItem';
+import { LaunchingCSModuleItem } from 'src/data/LaunchingCSModuleItem';
+
 
 @Component({
   selector: 'app-studies',
