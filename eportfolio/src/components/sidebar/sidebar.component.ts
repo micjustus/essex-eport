@@ -6,18 +6,17 @@ import { CourseModuleItem } from 'src/data/courseModule';
 function setElemHeight(elm: HTMLElement) {
   if (!elm) return;
 
-  console.log("set elem height for " + elm.id);
   var first = elm.hasAttribute('data-collapsed');
   var collapsed = elm.getAttribute('data-collapsed') == 'true';
 
   if (!first || collapsed) {
     var height = elm?.scrollHeight;
-    elm.style.height = height + 'px';
-    //elm.style.opacity = '1';
+    elm.style.height = '';
+    elm.style.opacity = '1';
     elm.setAttribute('data-collapsed', 'false');
   } else {
     elm.style.height = '0';
-    //elm.style.opacity = '0';
+    elm.style.opacity = '0';
     elm.setAttribute('data-collapsed', 'true');
   }
 }
@@ -48,8 +47,13 @@ export class SidebarComponent implements OnInit {
         else
           val.classList.add('active');
 
-        //let val2 : HTMLElement = val as HTMLElement;
-        //setElemHeight(val2);
+          // find the "collapsible" child
+        // let val2 : HTMLElement = val as HTMLElement;
+        // setElemHeight(val2);
+
+        let content = val.nextElementSibling;
+        if (content)
+          setElemHeight(content as HTMLElement);
       });
     }
 
