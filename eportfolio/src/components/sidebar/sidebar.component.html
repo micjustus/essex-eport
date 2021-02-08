@@ -1,0 +1,26 @@
+<nav id="menu" class="w-full">
+  <header class="text-lg font-bold">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/studies">Course Overview</a></li>
+    <li>
+      <span class="opener">Modules</span>
+      <ul *ngFor="let module of this.modules; index as idx">
+        <span class="opener">{{ module.Title }}</span>
+          <ul>
+            <li>
+              <a class="" (click)="select(module, idx)">Overview</a>
+            </li>
+            <li>
+              <a routerLink="module">Artefacts</a>
+            </li>
+            <li>
+              <a routerLink="module">Reflections</a>
+            </li>
+          </ul>
+      </ul>
+    </li>
+  </ul>
+</nav>

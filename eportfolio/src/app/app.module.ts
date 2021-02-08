@@ -17,6 +17,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroComponent } from '../components/hero/hero.component';
 import { StudiesComponent } from '../components/studies/studies.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { StudiesComponent } from '../components/studies/studies.component';
     CourseModuleComponent,
     ReflectionsComponent,
     HeroComponent,
-    StudiesComponent
+    StudiesComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

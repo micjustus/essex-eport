@@ -1,49 +1,10 @@
 <app-header></app-header>
 
 <div class="flex flex-row">
-  <div id="sidebar w-1/3 relative w-8">
-    <div class="inner">
-      <nav id="menu">
-        <header class="text-lg font-bold">
-          <h2>Menu</h2>
-        </header>
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/studies">Course Overview</a></li>
-          <li>
-            <span class="opener active">Modules</span>
-            <ul>
-              <li *ngFor="let module of this.Modules; index as idx">
-                <a
-                  class="opener"
-                  (click)="setCourse(module)"
-                  [routerLink]="['module', idx]"
-                  >{{ module.Title }}
-                  <ul>
-                    <li>
-                      <a
-                        routerLink="module"
-                        (click)="setCourse(module)"
-                        fragment="artefacts"
-                        >Artefacts</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        routerLink="module"
-                        (click)="setCourse(module)"
-                        fragment="writing"
-                        >Reflections</a
-                      >
-                    </li>
-                  </ul>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <div id="sidebar" class="flex-none w-1/5 relative">
+
+    <app-sidebar [modules]="this.Modules" (moduleSelected)="activateCourse($event)"></app-sidebar>
+
   </div>
 
   <router-outlet></router-outlet>

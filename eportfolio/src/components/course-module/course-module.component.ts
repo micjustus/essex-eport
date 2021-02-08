@@ -61,7 +61,7 @@ function checkHeadings(): void {
 })
 export class CourseModuleComponent implements OnInit {
   @Input() course!: CourseModuleItem;
-  private subs: Subscription;
+  private subs!: Subscription;
 
   constructor(
     private route: ActivatedRoute,
