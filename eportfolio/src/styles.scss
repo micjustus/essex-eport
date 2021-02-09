@@ -446,3 +446,84 @@ ul.table-of-contents {
 .collapsible input[type="checkbox"] {
   display: none;
 }
+
+.reference-1{
+  border: 1px solid white;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  flex-grow: 0;
+  flex-basis: 25%;
+}
+.reference-1:hover{
+  background-color: hsl(351, 100%, 86%);
+  border: 1px solid hsl(351, 100%, 79%);
+  color:darkblue;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+.reference-1 h1{
+  margin-bottom:10px;
+}
+.reference-1 img{
+  max-width:200px;
+  max-height:200px;
+  vertical-align: middle;
+  margin:0 auto;
+}
+.reference-1 .author{
+  padding-top: 6px;
+}
+.reference-1-na{
+  border: 1px solid white;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  flex-grow: 0;
+  flex-basis: 25%;
+}
+.reference-1-na:hover{
+  background-color: hsl(351, 100%, 98%);
+  border: 1px solid hsl(351, 100%, 89%);
+  color:darkblue;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+.reference-1-na:hover:before{
+
+  color:hsl(0, 0%, 36%);
+  font-size: 1.5em;
+  content: "Not available";
+  font-family: sans-serif ;
+}
+
+.reference-1-na::before{
+  font-size:48px;
+  color: lightgray;
+  content:"\f02d";
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.tutor-1{
+  width:100%;
+  flex-basis: 20%;
+}
+
+.tutor-1 img.profile{
+  text-align: center;
+  max-width:100px;
+  max-height:100px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+}
+
+.tutor-1 .banner{
+  width: 100%;
+  max-height: 4em;
+}
