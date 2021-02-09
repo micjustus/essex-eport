@@ -1,14 +1,15 @@
 <app-header></app-header>
 
 <div class="flex flex-row">
-  <div id="sidebar" class="flex-grow w-1/4  bg-gray-100">
+  <div id="sidebar" class="flex-none min-w-1/6  bg-gray-100">
 
     <app-sidebar [modules]="this.Modules" (moduleSelected)="activateCourse($event)"></app-sidebar>
 
   </div>
 
-  <router-outlet></router-outlet>
-
+  <div class="shadow-l-md rounded-tl-md rounded-bl-md">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 <app-footer></app-footer>

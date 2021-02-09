@@ -61,10 +61,42 @@ ul li{
   padding: 0.5em 0 0.5em 0;
 }
 
+.opener ~ .collapsible .opener {
+  font-size: 0.8em;
+}
 .opener ~ .collapsible{
   opacity: 0;
   overflow: hidden;
-  transition: all 0.2s cubic-bezier(0.87, 0.095, 0.14, 0.865);
+
+  transition: all 0.2s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+
+@keyframes collapse{
+  from {
+    opacity:1;
+    height: 100%;
+    padding-left: 1em;
+  }
+
+  to{
+    opacity: 0;
+    height: 0;
+    padding-left: 0;
+  }
+}
+
+@keyframes expand{
+  from {
+    opacity:0;
+    height:0;
+    padding-left: 0;
+  }
+
+  to{
+    opacity:1;
+    height: 100%;
+    padding-left: 1em;
+  }
 }
 .opener.active ~ .collapsible {
   opacity: 1;
@@ -331,7 +363,7 @@ ul.table-of-contents {
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 720px) {
   .container {
     width: 100%;
 
@@ -353,6 +385,10 @@ ul.table-of-contents {
       right: auto;
     }
   }
+}
+
+.collapsible a {
+  cursor: pointer;
 }
 
 .collapsible h3 {

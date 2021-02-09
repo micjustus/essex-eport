@@ -4,18 +4,18 @@ import { CourseModuleItem } from "./courseModule";
 export class InductionModuleItem extends CourseModuleItem {
 
   constructor(path: string) {
-    super("Induction into Computer Science", "", path);
+    super("Induction", "Induction into Computer Science", path);
 
-    this.Description = "This module introduces candidates into the concept of online study and familiarises students with " +
+    this.description = "This module introduces candidates into the concept of online study and familiarises students with " +
     "the requirements of academic study. Concepts such as plagiarism are addressed as well as academic research and writing.";
 
-    this.Outcomes = [
+    this.outcomes = [
       "Become familiar with research of academic sources",
       "Understand the role of academic integrity and plagiarism",
       "Understand the requirements of online study"
     ]
 
-    this.Artefacts = [
+    this.artefacts = [
       {
         Type: "PDF",
         Title: "Induction Assignment",
@@ -24,7 +24,7 @@ export class InductionModuleItem extends CourseModuleItem {
       }
     ]
 
-    this.Reflections = [
+    this.reflections = [
       {
         Title: "Plagiarism",
         Description: "In this short article, I reflect on my understanding of plagiarism before and after the induction module.",

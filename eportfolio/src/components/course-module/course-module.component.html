@@ -39,10 +39,10 @@
         <div class="course-banner-title">
           <h2>Masters of Computer Science</h2>
           <h3>
-            <em>{{ course?.Title || "(Unspecified)" }}</em>
+            <em>{{ course?.current.title || "(Unspecified)" }}</em>
           </h3>
           <span>
-            {{ course?.Description || "(Unspecified)" }}
+            {{ course?.current.description || "(Unspecified)" }}
           </span>
         </div>
       </div>
@@ -52,7 +52,7 @@
       <div id="outcomes" class="course-section">
         <h3>Outcomes</h3>
         <ol>
-          <li *ngFor="let outcome of course.Outcomes">
+          <li *ngFor="let outcome of course.outcomes">
             {{ outcome }}
           </li>
         </ol>
@@ -61,7 +61,7 @@
       <div id="artefacts" class="course-section">
         <h3>Module Artefacts</h3>
         <div>
-          <div *ngFor="let art of course.Artefacts" class="course-artefact">
+          <div *ngFor="let art of course.artefacts" class="course-artefact">
             <img
               src=""
               alt="Artefact icon"
@@ -88,7 +88,7 @@
 
       <div id="writing" class="course-section">
             <h3>Reflective Writing</h3>
-          <div *ngFor="let ref of course.Reflections; let i = index" class="course-artefact ">
+          <div *ngFor="let ref of course.reflections; let i = index" class="course-artefact ">
             <img
               src=""
               alt="Reflection"
@@ -112,11 +112,11 @@
       <div id="notes" class="course-section">
         <h3>Meeting Notes</h3>
         <div>
-          <div *ngIf="!course.Notes.length" style="text-align: center;">
+          <div *ngIf="!course.notes.length" style="text-align: center;">
             <img src="../../assets/images/nothing_here.png" alt="Empty" class="nothing-here" />
           </div>
-          <div *ngIf="course.Notes.length">
-            <div *ngFor="let note of course.Notes" class="course-artefact">
+          <div *ngIf="course.notes.length">
+            <div *ngFor="let note of course.notes" class="course-artefact">
               <img
                 src=""
                 alt="Notes"

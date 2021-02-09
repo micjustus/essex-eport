@@ -1,4 +1,4 @@
-<nav id="menu" class="w-full h-screen">
+<nav id="menu" class="w-full h-screen p-10">
   <header class="text-lg font-bold">
     <h2>Menu</h2>
   </header>
@@ -12,7 +12,7 @@
         class="collapsible"
         *ngFor="let module of this.modules; index as idx"
       >
-        <span class="opener">{{ module.Title }}</span>
+        <span class="opener">{{ module.shortTitle }}</span>
 
         <ul class="collapsible">
           <li>

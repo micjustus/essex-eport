@@ -36,8 +36,15 @@ export class SidebarComponent implements OnInit {
   constructor() {}
 
   ngAfterViewInit(){
-    var nodes = document.querySelectorAll('.opener');
+    var nodes = document.querySelectorAll('.collapsible ul.collapsible');
+    for(let index=0;index<nodes.length;index++){
+      var n = nodes[index] as HTMLElement;
 
+       n.style.height='0';
+       n.style.opacity='1';
+    }
+
+    nodes = document.querySelectorAll('.opener');
     for(let  index=0;index<nodes.length;index++){
       let val = nodes[index];
 
@@ -47,16 +54,11 @@ export class SidebarComponent implements OnInit {
         else
           val.classList.add('active');
 
-          // find the "collapsible" child
-        // let val2 : HTMLElement = val as HTMLElement;
-        // setElemHeight(val2);
-
         let content = val.nextElementSibling;
         if (content)
           setElemHeight(content as HTMLElement);
       });
     }
-
   }
 
   ngOnInit(): void {

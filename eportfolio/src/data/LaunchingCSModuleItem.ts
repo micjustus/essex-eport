@@ -2,11 +2,11 @@ import { CourseModuleItem } from "./courseModule";
 
 export class LaunchingCSModuleItem extends CourseModuleItem {
   constructor(path: string) {
-    super("Launching into Computer Science", "", path);
+    super("Launching", "Launching into Computer Science", path);
 
-    this.Description =  "This module deals with aspects of computer scientists such as their roles and ethical responsibilities, computer architectures, data structures, computational algorithms and encouraging of on-going professional development.";
+    this.description =  "This module deals with aspects of computer scientists such as their roles and ethical responsibilities, computer architectures, data structures, computational algorithms and encouraging of on-going professional development.";
 
-    this.Tasks = [
+    this.tasks = [
       "Roles, skillsets, ethical responsibilities",
       "Computing architectures, practices, applications, data structures",
       "Computational theories and programming concepts",
@@ -14,7 +14,7 @@ export class LaunchingCSModuleItem extends CourseModuleItem {
       "Professional development regarding threats, securities and global impacts"
     ]
 
-    this.Outcomes = [
+    this.outcomes = [
       "Identify and explain the architecture, structure and functionality of basic components of computer system",
       "Demonstrate a critical understanding of core data structures and programming concepts, including algorithm computability",
       "Critically evaluate the functionality of different types of software, i.e., operating system, utility programs, languages and applications",
@@ -22,18 +22,18 @@ export class LaunchingCSModuleItem extends CourseModuleItem {
     ]
 
     this.units = [
-      { Title: "Unit 1", Description: "Computer Scientist Roles and Responsibilites" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" },
-      { Title: "Unit 2", Description: "Computer Hardware" }
+      { title: "Unit 1", description: "Computer Scientist Roles and Responsibilites" },
+      { title: "Unit 2", description: "Computer Hardware" },
+      { title: "Unit 3", description: "Computer Hardware" },
+      { title: "Unit 4", description: "Computer Hardware" },
+      { title: "Unit 5", description: "Computer Hardware" },
+      { title: "Unit 6", description: "Computer Hardware" },
+      { title: "Unit 7", description: "Computer Hardware" },
+      { title: "Unit 8", description: "Computer Hardware" },
+      { title: "Unit 9", description: "Computer Hardware" },
+      { title: "Unit 10", description: "Computer Hardware" },
+      { title: "Unit 11", description: "Computer Hardware" },
+      { title: "Unit 12", description: "Computer Hardware" }
     ]
 
     this.currentUnit = 1;

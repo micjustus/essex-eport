@@ -3,20 +3,20 @@ import { Reflection } from "./Reflection";
 import { TeamNote } from "./TeamNote";
 
 export class ModuleUnit{
-  public Title!: string;
-  public Description!: string;
-  public Outcome?: string;
-  public StartDate?: Date;
-  public EndDate?: Date
+  public title!: string;
+  public description!: string;
+  public outcome?: string;
+  public startDate?: Date;
+  public endDate?: Date
 }
 
 export class CourseModuleItem {
 
-  public Outcomes: string[] = [];
-  public Tasks: string[] = [];
-  public Artefacts: Artefact[] = [];
-  public Reflections: Reflection[] = [];
-  public Notes: TeamNote[] = [];
+  public outcomes: string[] = [];
+  public tasks: string[] = [];
+  public artefacts: Artefact[] = [];
+  public reflections: Reflection[] = [];
+  public notes: TeamNote[] = [];
   public units!: ModuleUnit[];
   public progress: number = 0;
   public _moduleIndex: number = 0;
@@ -31,10 +31,11 @@ export class CourseModuleItem {
   }
 
   constructor(
-    public Title: string,
-    public Description: string,
+    public shortTitle: string,
+    public longTitle: string,
     public path: string,
-    public imageUrl: string = ''
+    public description: string = '',
+    public imageUrl: string = '',
   ) {
     if (!this.imageUrl) this.imageUrl = "../assets/images/essex_logo.png";
   }
