@@ -1,24 +1,20 @@
-import { Artefact } from "./Artefact";
-import { Reflection } from "./Reflection";
-import { TeamNote } from "./TeamNote";
+import { artefact } from "./artefact";
+import { ModuleUnit } from "./moduleUnit";
+import { Reflection } from "./reflection";
+import { TeamNote } from "./teamNote";
+import { Tutor } from "./tutor";
 
-export class ModuleUnit{
-  public title!: string;
-  public description!: string;
-  public outcome?: string;
-  public startDate?: Date;
-  public endDate?: Date
-}
-
-export class CourseModuleItem {
+export class CourseModule {
 
   public outcomes: string[] = [];
   public tasks: string[] = [];
-  public artefacts: Artefact[] = [];
+  public artefacts: artefact[] = [];
   public reflections: Reflection[] = [];
   public notes: TeamNote[] = [];
-  public units!: ModuleUnit[];
+  public units: ModuleUnit[] =[];
   public progress: number = 0;
+  public tutor: Tutor =<Tutor>{};
+
   public _moduleIndex: number = 0;
 
   public get current(): ModuleUnit {

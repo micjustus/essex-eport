@@ -73,7 +73,7 @@
 
     <div class="flex flew-row space-x-4">
       <!-- Tutor 1-->
-      <div
+      <div *ngFor="let tutor of tutors; index as idx"
         class="tutor-1 text-center flex flex-col bg-white shadow-md rounded-lg overflow-hidden border border-gray-100 transition-shadow hover:shadow-xl"
       >
         <img
@@ -83,52 +83,23 @@
         />
 
         <div class="p-1 text-center space-y-4">
-          <p class="min-h-12 inline-block">Launching into Computer Science</p>
+          <p class="min-h-12 inline-block">{{ tutor.course }}</p>
 
           <img
             class="profile rounded-full max-h-12 max-w-12"
-            src="../../assets/images/Nawaz Khan.jpg"
-            alt=""
+            src="../../assets/images/{{tutor.profilePicture}}"
+            alt="Profile Picture"
           />
 
           <span class="text-md whitespace-nowrap text-gray-800 font-semibold"
-            >Vivian Edema</span
+            >{{ tutor.name }}</span
           >
 
           <div class="items-end pb-3">
-            <a class="button bg-white" routerLink="essex">Biography</a>
+            <a class="button bg-white" routerLink="{{tutor.bibliography}}">Biography</a>
           </div>
         </div>
       </div>
-
-      <!-- Tutor 2-->
-      <div
-      class="tutor-1 text-center flex flex-col bg-white shadow-md rounded-lg overflow-hidden border border-gray-100 transition-shadow hover:shadow-xl"
-    >
-      <img
-        src="../../assets/images/banner.jpg"
-        class="items-start banner max-h-24 max-w-12"
-        alt="Background"
-      />
-
-      <div class="p-1 text-center space-y-4">
-        <p class="min-h-12 inline-block">Introduction to Online Learning</p>
-
-        <img
-          class="profile rounded-full max-h-12 max-w-12"
-          src="../../assets/images/vivian edema.png"
-          alt=""
-        />
-
-        <span class="text-md whitespace-nowrap text-gray-800 font-semibold"
-          >Vivian Edema</span
-        >
-
-        <div class="items-end pb-3">
-          <a class="button bg-white" routerLink="essex">Biography</a>
-        </div>
-      </div>
-    </div>
     </div>
   </div>
 

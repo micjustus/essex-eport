@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CourseModuleItem } from 'src/data/courseModule';
+import { Component, OnInit } from '@angular/core';
+import { CourseModule } from 'src/data/courseModule';
 import { DataService } from 'src/data/dataService';
+import { Tutor } from 'src/data/tutor';
 
 
 
@@ -11,7 +12,7 @@ import { DataService } from 'src/data/dataService';
 })
 export class MastersComponent implements OnInit {
 
-  @Input() currentModule!: CourseModuleItem;
+  public currentModule: CourseModule = <CourseModule>{};
 
   constructor (private dataService: DataService){}
 
@@ -19,4 +20,7 @@ export class MastersComponent implements OnInit {
     this.currentModule = this.dataService.currentModule;
   }
 
+  public get tutors(): Tutor[] {
+    return this.dataService.tutors;
+  }
 }

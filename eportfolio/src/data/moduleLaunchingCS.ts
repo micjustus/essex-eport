@@ -1,8 +1,10 @@
-import { CourseModuleItem } from "./courseModule";
+import { CourseModule } from "./courseModule";
 
-export class LaunchingCSModuleItem extends CourseModuleItem {
+export class LaunchingCSModuleItem extends CourseModule {
   constructor(path: string) {
     super("Launching", "Launching into Computer Science", path);
+
+    this.tutor = { name:'Nawaz Khan', course:"Launching into computer Science", profilePicture:"Nawaz Khan.jpg", bibliography:"#"};
 
     this.description =  "This module deals with aspects of computer scientists such as their roles and ethical responsibilities, computer architectures, data structures, computational algorithms and encouraging of on-going professional development.";
 

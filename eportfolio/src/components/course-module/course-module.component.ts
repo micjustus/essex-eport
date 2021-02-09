@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CourseModuleItem } from 'src/data/courseModule';
+import { CourseModule } from 'src/data/courseModule';
 import { DataService } from 'src/data/dataService';
-import { Reflection } from 'src/data/Reflection';
+import { Reflection } from 'src/data/reflection';
 
 
 let timeoutHandler: number | undefined;
@@ -53,15 +53,13 @@ function checkHeadings(): void {
   timeoutHandler = undefined;
 }
 
-// This is the important part!
-
 @Component({
   selector: 'app-course-module',
   templateUrl: './course-module.component.html',
   styleUrls: ['./course-module.component.css'],
 })
 export class CourseModuleComponent implements OnInit {
-  @Input() course!: CourseModuleItem;
+  @Input() course!: CourseModule;
   private subs!: Subscription;
 
   constructor(

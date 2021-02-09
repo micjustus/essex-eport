@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from 'src/data/dataService';
-import { Reflection } from 'src/data/Reflection';
+import { Reflection } from 'src/data/reflection';
 
 
 @Component({

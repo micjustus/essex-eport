@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { CourseModuleItem } from 'src/data/courseModule';
+import { CourseModule } from 'src/data/courseModule';
 
 
 function setElemHeight(elm: HTMLElement) {
@@ -27,11 +27,11 @@ function setElemHeight(elm: HTMLElement) {
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  @Input() modules!: CourseModuleItem[];
+  @Input() modules!: CourseModule[];
   @Output() moduleSelected: EventEmitter<{
-    item: CourseModuleItem;
+    item: CourseModule;
     index: number;
-  }> = new EventEmitter<{ item: CourseModuleItem; index: number }>();
+  }> = new EventEmitter<{ item: CourseModule; index: number }>();
 
   constructor() {}
 
@@ -65,7 +65,7 @@ export class SidebarComponent implements OnInit {
     // we want to handle clicks on "collapsible" thingies
   }
 
-  select(value: CourseModuleItem, index: number) {
+  select(value: CourseModule, index: number) {
     console.log('module has been selected. Emit an event');
 
     this.moduleSelected.emit({

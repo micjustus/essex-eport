@@ -1,12 +1,15 @@
-import { CourseModuleItem } from "./courseModule";
+import { CourseModule } from "./courseModule";
 
 
-export class InductionModuleItem extends CourseModuleItem {
+export class InductionModuleItem extends CourseModule {
 
   constructor(path: string) {
     super("Induction", "Induction into Computer Science", path);
 
-    this.description = "This module introduces candidates into the concept of online study and familiarises students with " +
+    this.tutor = { name:'Vivian Edema', course:"Introduction to Online Learning", profilePicture:"vivian edema.png", bibliography:"#"};
+
+    this.description =
+    "This module introduces candidates into the concept of online study and familiarises students with " +
     "the requirements of academic study. Concepts such as plagiarism are addressed as well as academic research and writing.";
 
     this.outcomes = [
