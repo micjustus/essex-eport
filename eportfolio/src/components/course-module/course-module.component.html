@@ -30,165 +30,169 @@
 <div class="flex flex-col w-4/5 mx-auto my-3 p-10">
   <div class="mt-8 flex flex-row shadow-lg">
     <div
-      class="page-slash course-logo-fill md:w-1/12 p-4 rounded-tl-lg rounded-bl-lg text-left text-white border border-gray-200"
-    >
-      <img
-        src="../../assets/images/essex_logo.png"
-        alt="Essex University Logo"
-        class="course-logo"
-      />
+         class="inline-block page-slash course-logo-fill md:w-1/12 p-4 rounded-tl-lg rounded-bl-lg text-left text-white border border-gray-200">
+      <img src="../../assets/images/essex_logo.png"
+           alt="Essex University Logo"
+           class="course-logo" />
     </div>
 
-    <div
-      class="w-full md:w-3/4 p-4 bg-white rounded-tr-lg rounded-br-lg text-left border-b border-t border-gray-200"
-    >
-      <h4 class="text-lg font-bold text-red-400 mb-4">
-        {{ course?.longTitle || "(Unspecified)" }}
-      </h4>
+    <div class="">
 
-      <span>{{ course?.description || "(Unspecified)" }} </span>
+      <div>
+        <div class="flex flew-row">
+          <div class="p-4 bg-white rounded-tr-lg rounded-br-lg text-left border-b border-t border-gray-200">
+            <h4 class="text-lg font-bold text-red-400 mb-4">
+              {{ course?.longTitle || "(Unspecified)" }}
+            </h4>
 
-      <div class="relative pt-1">
-        <div class="flex mb-2 items-center justify-between">
-          <div>
-            <span
-              class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-gray-600 bg-gray-100"
-            >
-            </span>
+            <span>{{ course?.description || "(Unspecified)" }} </span>
+
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span
+                        class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-gray-600 bg-gray-100">
+                  </span>
+                </div>
+                <div class="">
+                  <span class="text-xs font-semibold inline-block text-gray-600">
+                  </span>
+                </div>
+              </div>
+              <div class="overflow-hidden h-3 mb-4 text-xs flex rounded-full bg-gray-200">
+                <div
+                     class="rounded-full border border-red-400 shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-300">
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="">
-            <span class="text-xs font-semibold inline-block text-gray-600">
-            </span>
+
+          <div class="relative pt-1 tutor-1">
+            <img class="profile rounded-full max-h-12 max-w-12"
+                 src="../../assets/images/{{ course.tutor.profilePicture }}"
+                 alt="Profile Picture" />
           </div>
         </div>
-        <div
-          class="overflow-hidden h-3 mb-4 text-xs flex rounded-full bg-gray-200"
-        >
-          <div
-            class="rounded-full border border-red-400 shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-300"
-          ></div>
-        </div>
+
       </div>
-    </div>
 
-    <div class="relative pt-1 tutor-1 inline-block">
-      <img
-        class="profile rounded-full max-h-12 max-w-12"
-        src="../../assets/images/{{ course.tutor.profilePicture }}"
-        alt="Profile Picture"
-      />
+
+      <div class="p-10">
+        <h4 class="text-md font-semibold text-gray-400 mb-4">
+          Module Outcomes
+        </h4>
+        <ol class="list-inside list-decimal leading-8 li-spaced-sm">
+          <li *ngFor="let outcome of course.outcomes">
+            {{ outcome }}
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
 
+
+
   <div class="mt-10">
-    <div class="flex flex-row w-full">
+    <div class="flex flex-row w-full relative">
 
       <div class="flex flex-row w-full">
-        <div id="outcomes" class="flex-1 tab">
-          <h3>Outcomes</h3>
+        <div id="units"
+             class="flex-1 tab">
+          <h3>Units</h3>
         </div>
-        <div id="artefacts" class="flex-1 tab">
+        <div id="artefacts"
+             class="flex-1 tab">
           <h3>Artefacts</h3>
         </div>
-        <div id="writings" class="flex-1 tab">
+        <div id="writings"
+             class="flex-1 tab">
           <h3>Writing</h3>
         </div>
-        <div id="notes" class="flex-1 tab">
+        <div id="notes"
+             class="flex-1 tab">
           <h3>Notes</h3>
         </div>
       </div>
 
     </div>
 
-    <div class="w-full border border-gray-100 rounded-bl-md rounded-br-md shadow-sm p-4">
-      <div id="tab-outcomes" class="tab-content">
-        <ol>
-          <li *ngFor="let outcome of course.outcomes">
-            {{ outcome }}
-          </li>
-        </ol>
-      </div>
-
-      <div id="tab-artefacts" class="tab-content">
-        <div *ngFor="let art of course.artefacts" class="course-artefact">
-          <img
-            src=""
-            alt="Artefact icon"
-            class="doc"
-            src="../../assets/images/document.png"
-          />
-          <div class="in-flex-col">
-            <span
-              ><strong>{{ art.title }}</strong
-              ><br />
-              {{ art.description }}</span
-            >
-            <a
-              class="button"
-              *ngIf="art.URL"
-              href="{{ art.URL }}"
-              target="_blank"
-              >View</a
-            >
+    <div class="w-full  p-4">
+      <div id="tab-units"
+           class="tab-content">
+        <div class="mx-auto flex flew-row flex-wrap  space-y-4 space-x-4">
+          <div *ngFor="let unit of this.course.units" class="reference-1">
+            <h4>{{ unit.title }}</h4>
+            <span>{{ unit.description }}</span>
           </div>
         </div>
       </div>
 
-      <div id="tab-writings" class="tab-content">
-        <div
-          *ngFor="let ref of course.reflections; let i = index"
-          class="course-artefact"
-        >
-          <img
-            src=""
-            alt="Reflection"
-            class="doc"
-            src="../../assets/images/cloud.png"
-          />
+      <div id="tab-artefacts"
+           class="tab-content">
+        <div *ngFor="let art of course.artefacts"
+             class="course-artefact">
+          <img src=""
+               alt="Artefact icon"
+               class="doc"
+               src="../../assets/images/document.png" />
+          <div class="in-flex-col">
+            <span><strong>{{ art.title }}</strong><br />
+              {{ art.description }}</span>
+            <a class="button"
+               *ngIf="art.URL"
+               href="{{ art.URL }}"
+               target="_blank">View</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-writings"
+           class="tab-content">
+        <div *ngFor="let ref of course.reflections; let i = index"
+             class="course-artefact">
+          <img src=""
+               alt="Reflection"
+               class="doc"
+               src="../../assets/images/cloud.png" />
           <div class="in-flex-col collapsible">
-            <input type="checkbox" id="checkbox-{{ i }}" />
-            <label
-              class="checkbox-label"
-              for="checkbox-{{ i }}"
-              (click)="setElemHeight($event, 'expander-' + i)"
-            >
+            <input type="checkbox"
+                   id="checkbox-{{ i }}" />
+            <label class="checkbox-label"
+                   for="checkbox-{{ i }}"
+                   (click)="setElemHeight($event, 'expander-' + i)">
               <strong class="collapse-title">{{ ref.title }}</strong>
             </label>
-            <div class="collapse-content" id="expander-{{ i }}">
+            <div class="collapse-content"
+                 id="expander-{{ i }}">
               <p><em [innerHTML]="ref.description"></em></p>
-              <a
-                class="button"
-                *ngIf="ref.URL"
-                routerLink="/reflections"
-                (click)="setPiece(ref)"
-                >Read More</a
-              >
+              <a class="button"
+                 *ngIf="ref.URL"
+                 routerLink="/reflections"
+                 (click)="setPiece(ref)">Read More</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div id="tab-notes" class="tab-content">
-        <div *ngIf="!course.notes?.length" style="text-align: center">
-          <img
-            src="../../assets/images/nothing_here.png"
-            alt="Empty"
-            class="nothing-here"
-          />
+      <div id="tab-notes"
+           class="tab-content">
+        <div *ngIf="!course.notes?.length"
+             style="text-align: center">
+          <img src="../../assets/images/nothing_here.png"
+               alt="Empty"
+               class="nothing-here" />
         </div>
         <div *ngIf="course.notes.length">
-          <div *ngFor="let note of course.notes" class="course-artefact">
-            <img
-              src=""
-              alt="Notes"
-              class="doc"
-              src="../../assets/images/team.png"
-            />
+          <div *ngFor="let note of course.notes"
+               class="course-artefact">
+            <img src=""
+                 alt="Notes"
+                 class="doc"
+                 src="../../assets/images/team.png" />
             <div class="in-flex-col">
               <span>
                 {{ note.heldOn }}<br />
-                <strong>{{ note.topic }}</strong
-                ><br />
+                <strong>{{ note.topic }}</strong><br />
                 Members: {{ note.members.length }}<br />
                 {{ note.conclusion }}
               </span>
@@ -200,7 +204,8 @@
     </div>
   </div>
 
-  <div id="matrix" class="course-section mt-10">
+  <div id="matrix"
+       class="course-section mt-10">
     <h3>Skills Matrix</h3>
     <blockquote class="grapefruit">
       <h3>

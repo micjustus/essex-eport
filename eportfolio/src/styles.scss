@@ -454,6 +454,8 @@ ul.table-of-contents {
   border-radius: 5px;
   flex-grow: 0;
   flex-basis: 25%;
+  min-height: 100px;
+  min-width: 100px;
 }
 .reference-1:hover{
   background-color: hsl(351, 100%, 86%);
@@ -474,6 +476,7 @@ ul.table-of-contents {
 .reference-1 .author{
   padding-top: 6px;
 }
+
 .reference-1-na{
   border: 1px solid white;
   padding: 5px;
@@ -538,29 +541,33 @@ ul.table-of-contents {
 }
 
 .tab{
+  appearance: none;
   border-bottom: 1px solid lightgray;
   border-radius: 0;
   color: #575d60;
   cursor: pointer;
   display: inline-block;
   font-weight: 500;
-  font-size: 1.0em;
+  font-size: 1.1em;
   min-width: 64px;
   min-height:58px;
-  padding: 0.6em;
+  padding: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   text-align: center;
   text-decoration: none;
-  transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
 
   -ms-appearance: none;
-  -ms-transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
   -moz-appearance: none;
-  -moz-transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
   -webkit-appearance: none;
-  -webkit-transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
 
 }
 .tab:hover{
@@ -568,9 +575,16 @@ ul.table-of-contents {
   background-color:hsl(296.4, 64.7%, 20%);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  color: white;
+  color: #ed5565;
 }
 .tab.focus{
   border-bottom: 2px solid #ed5565;
   font-weight:700;
+}
+.tab h3{
+  margin:0;
+  padding:0;
+}
+ol.li-spaced-sm li{
+  padding: 0.2em;
 }
