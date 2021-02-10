@@ -1,14 +1,15 @@
-import { artefact } from "./artefact";
-import { ModuleUnit } from "./moduleUnit";
+import { Artefact } from "./Artefact";
+import { ModuleUnit } from "./ModuleUnit";
 import { Reflection } from "./reflection";
-import { TeamNote } from "./teamNote";
+import { TeamNote } from "./TeamNote";
 import { Tutor } from "./tutor";
+
 
 export class CourseModule {
 
   public outcomes: string[] = [];
   public tasks: string[] = [];
-  public artefacts: artefact[] = [];
+  public artefacts: Artefact[] = [];
   public reflections: Reflection[] = [];
   public notes: TeamNote[] = [];
   public units: ModuleUnit[] =[];
@@ -17,11 +18,11 @@ export class CourseModule {
 
   public _moduleIndex: number = 0;
 
-  public get current(): ModuleUnit {
+  public get currentUnit(): ModuleUnit {
     return this.units[this._moduleIndex];
   }
 
-  public set currentUnit(value:number){
+  public set currentUnitIndex(value:number){
     this._moduleIndex = value;
     this.progress = (this._moduleIndex/this.units.length)*100;
   }

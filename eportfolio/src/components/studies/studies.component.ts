@@ -1,3 +1,4 @@
+import { isNgTemplate } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourseModule } from 'src/data/courseModule';
@@ -18,6 +19,8 @@ export class StudiesComponent implements OnInit {
     private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataService.modules = [];  // make sure it's empty
+
     this.dataService.modules.push(new InductionModuleItem("studies/module/induction"));
     this.dataService.modules.push(new LaunchingCSModuleItem("studies/module/launching"));
 
@@ -29,6 +32,7 @@ export class StudiesComponent implements OnInit {
   }
 
   activateCourse(v: { item: CourseModule, index: number}){
+    console.log("activateCourse: " + v.item.longTitle);
     this.dataService.selectedCourse = v.item;
     this.router.navigate(["studies/module", v.index]);
   }

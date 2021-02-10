@@ -5,9 +5,9 @@ import { Tutor } from "./tutor";
 
 @Injectable()
 export class DataService{
-  selectedCourse: CourseModule = <CourseModule>{};
-  selectedWriting: Reflection = <Reflection>{};
-  currentModule: CourseModule = <CourseModule>{};
+  selectedCourse!: CourseModule;
+  selectedWriting!: Reflection;
+  currentModule!: CourseModule;
   modules: CourseModule[] = [];
 
   public get tutors(): Tutor[]{
@@ -16,6 +16,8 @@ export class DataService{
     this.modules.forEach((mod, idx)=>{
       res.push(mod.tutor);
     });
+
+    console.log("GET tutors => " + res.length);
 
     return res;
   }

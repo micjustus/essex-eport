@@ -20,33 +20,33 @@ export class InductionModuleItem extends CourseModule {
 
     this.artefacts = [
       {
-        Type: "PDF",
-        Title: "Induction Assignment",
-        Description: "A 750-word essay discussing the role of Computer Science. The essay demonstrates academic competency to reference and a command of the English language.",
+        type: "PDF",
+        title: "Induction Assignment",
+        description: "A 750-word essay discussing the role of Computer Science. The essay demonstrates academic competency to reference and a command of the English language.",
         URL: "./artefacts/01.M1Induction_Assignment.pdf"
       }
     ]
 
     this.reflections = [
       {
-        Title: "Plagiarism",
-        Description: "In this short article, I reflect on my understanding of plagiarism before and after the induction module.",
+        title: "Plagiarism",
+        description: "In this short article, I reflect on my understanding of plagiarism before and after the induction module.",
         URL: "reflections",
-        Content: "plagiarism.md"
+        content: "plagiarism.md"
       },
 
       {
-        Title: "Understanding Computer Science",
-        Description: "My reflections on how my work experience helped to confirm research for the induction assignment.",
+        title: "Understanding Computer Science",
+        description: "My reflections on how my work experience helped to confirm research for the induction assignment.",
         URL: "reflections",
-        Content: "understanding-cs.md"
+        content: "understanding-cs.md"
       },
 
       {
-        Title: "e-Portfolios",
-        Description: "In this short article I reflect on the concept of <strong>e-portfolios</strong> and the thoughts and opinions of fellow students.",
+        title: "e-Portfolios",
+        description: "In this short article I reflect on the concept of <strong>e-portfolios</strong> and the thoughts and opinions of fellow students.",
         URL: "reflections",
-        Content: "eportfolios.md"
+        content: "eportfolios.md"
       },
 
     ]

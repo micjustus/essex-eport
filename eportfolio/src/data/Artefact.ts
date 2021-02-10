@@ -1,6 +1,6 @@
-export interface artefact{
-  Type: string;
-  Title: string;
-  Description: string;
+export interface Artefact{
+  type: string;
+  title: string;
+  description: string;
   URL: string;
 }

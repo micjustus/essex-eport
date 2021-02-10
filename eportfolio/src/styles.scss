@@ -499,7 +499,7 @@ ul.table-of-contents {
 
 .reference-1-na::before{
   font-size:48px;
-  color: lightgray;
+  color: hsl(0, 0%, 83%);
   content:"\f02d";
   font-family: "Font Awesome 5 Free";
   display: inline-block;
@@ -526,4 +526,51 @@ ul.table-of-contents {
 .tutor-1 .banner{
   width: 100%;
   max-height: 4em;
+}
+
+.course-logo{
+  position:relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.course-logo-fill{
+  background-color: hsl(296.4, 64.7%, 20%);
+}
+
+.tab{
+  border-bottom: 1px solid lightgray;
+  border-radius: 0;
+  color: #575d60;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.0em;
+  min-width: 64px;
+  min-height:58px;
+  padding: 0.6em;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+
+  -ms-appearance: none;
+  -ms-transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  -moz-appearance: none;
+  -moz-transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  -webkit-appearance: none;
+  -webkit-transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+}
+.tab:hover{
+ border-bottom: 1px solid lightgray;
+  background-color:hsl(296.4, 64.7%, 20%);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+}
+.tab.focus{
+  border-bottom: 2px solid #ed5565;
+  font-weight:700;
 }

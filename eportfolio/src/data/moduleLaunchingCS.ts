@@ -38,6 +38,6 @@ export class LaunchingCSModuleItem extends CourseModule {
       { title: "Unit 12", description: "Computer Hardware" }
     ]
 
-    this.currentUnit = 1;
+    this.currentUnitIndex = 1;
   }
 }

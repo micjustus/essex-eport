@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CourseModule } from 'src/data/courseModule';
@@ -8,6 +8,8 @@ import { Reflection } from 'src/data/reflection';
 
 let timeoutHandler: number | undefined;
 let previousHighlight: Element;
+let lastContent: HTMLElement;
+let lastTab: HTMLElement;
 
 function scrollFunc(): void {
   if (timeoutHandler) return;
@@ -53,13 +55,35 @@ function checkHeadings(): void {
   timeoutHandler = undefined;
 }
 
+function switchTabs(this: HTMLElement, ev: MouseEvent): void{
+  console.log("SwitchTabs...");
+
+    var content = document.getElementById("tab-" + this.id);
+    if (!content)
+      return;
+
+    if (lastContent){
+        lastContent.style.display='none';
+      }
+
+    if (lastTab){
+      lastTab.classList.remove("focus");
+    }
+
+    this.classList.add("focus");
+    lastTab = this;
+
+    content.style.display= 'block';
+    lastContent = content;
+}
+
 @Component({
   selector: 'app-course-module',
   templateUrl: './course-module.component.html',
   styleUrls: ['./course-module.component.css'],
 })
-export class CourseModuleComponent implements OnInit {
-  @Input() course!: CourseModule;
+export class CourseModuleComponent implements OnInit, AfterViewInit {
+  course: CourseModule = <CourseModule>{};
   private subs!: Subscription;
 
   constructor(
@@ -67,18 +91,38 @@ export class CourseModuleComponent implements OnInit {
     private router: Router,
     private dataService: DataService
   ) {
-    if (!this.dataService.selectedCourse) {
+    if (!this.dataService.selectedCourse || this.dataService.selectedCourse === undefined) {
       this.router.navigate(['/studies'], {});
     } else {
       this.subs = this.route.params.subscribe((params) => {
         this.course = this.dataService.selectedCourse;
+        console.log("[CourseModule] set course => " + JSON.stringify(this.course));
       });
     }
+  }
+
+  ngAfterViewInit(): void{
+    var tabAreas = document.querySelectorAll("div.tab-content");
+    for(let index=0;index<tabAreas.length;index++){
+      var elm = tabAreas[index] as HTMLElement;
+      elm.style.display='none';
+    }
+
+    var tabs = document.querySelectorAll("div.tab");
+    for(let index=0;index<tabs.length;index++){
+      var elm = tabs[index] as HTMLElement;
+      console.log("Found tab-content... attaching click to [" + elm.id+ "]");
+      elm.addEventListener('click', switchTabs.bind(elm));
+
+    }
+
+    // locat e
   }
 
   ngOnInit(): void {
     this.course = this.dataService.selectedCourse;
     checkHeadings();
+
   }
 
   ngOnDestroy(): void {

@@ -1,6 +1,6 @@
 export interface Reflection{
-  Title: string;
-  Description: string;
+  title: string;
+  description: string;
   URL: string;
-  Content: string;
+  content: string;
 }

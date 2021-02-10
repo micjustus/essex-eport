@@ -1,6 +1,6 @@
 export interface TeamNote{
-  HeldOn: Date;
-  Topic: string;
-  Members: string[];
-  Conclusion: string;
+  heldOn: Date;
+  topic: string;
+  members: string[];
+  conclusion: string;
 }

@@ -2,9 +2,9 @@
 
       <div>
         <h2 class="course-title">Reflective Writing</h2>
-        <h4 class="course-title-sm">{{ item.Title }}</h4>
+        <h4 class="course-title-sm">{{ item.title }}</h4>
         <span>
-          {{ item.Description }}
+          {{ item.description }}
         </span>
       </div>
 
@@ -12,7 +12,7 @@
 
       <div>
         <h3>Thoughts and Reflections</h3>
-        <div markdown [src]="'assets/artefacts/reflections/' + item.Content" class="flex-col">
+        <div markdown [src]="'assets/artefacts/reflections/' + item.content" class="flex-col">
         </div>
       </div>
 
