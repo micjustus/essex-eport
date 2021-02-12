@@ -29,6 +29,7 @@ export class InductionModuleItem extends CourseModule {
 
     this.reflections = [
       {
+        type: "Blog",
         title: "Plagiarism",
         description: "In this short article, I reflect on my understanding of plagiarism before and after the induction module.",
         URL: "reflections",
@@ -36,6 +37,7 @@ export class InductionModuleItem extends CourseModule {
       },
 
       {
+        type: "Blog",
         title: "Understanding Computer Science",
         description: "My reflections on how my work experience helped to confirm research for the induction assignment.",
         URL: "reflections",
@@ -43,6 +45,7 @@ export class InductionModuleItem extends CourseModule {
       },
 
       {
+        type: "Blog",
         title: "e-Portfolios",
         description: "In this short article I reflect on the concept of <strong>e-portfolios</strong> and the thoughts and opinions of fellow students.",
         URL: "reflections",

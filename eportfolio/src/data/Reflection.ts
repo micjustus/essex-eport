@@ -1,6 +1,5 @@
-export interface Reflection{
-  title: string;
-  description: string;
-  URL: string;
+import { Artefact } from "./Artefact";
+
+export interface Reflection extends Artefact{
   content: string;
 }

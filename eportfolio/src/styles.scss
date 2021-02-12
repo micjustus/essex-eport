@@ -37,7 +37,7 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='296' height='296' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%233c003c' stroke-width='13.8'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23555555'%3E%3Ccircle cx='769' cy='229' r='16'/%3E%3Ccircle cx='539' cy='269' r='16'/%3E%3Ccircle cx='603' cy='493' r='16'/%3E%3Ccircle cx='731' cy='737' r='16'/%3E%3Ccircle cx='520' cy='660' r='16'/%3E%3Ccircle cx='309' cy='538' r='16'/%3E%3Ccircle cx='295' cy='764' r='16'/%3E%3Ccircle cx='40' cy='599' r='16'/%3E%3Ccircle cx='102' cy='382' r='16'/%3E%3Ccircle cx='127' cy='80' r='16'/%3E%3Ccircle cx='370' cy='105' r='16'/%3E%3Ccircle cx='578' cy='42' r='16'/%3E%3Ccircle cx='237' cy='261' r='16'/%3E%3Ccircle cx='390' cy='382' r='16'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-ul li{
+ul li {
   line-height: 2em;
 }
 
@@ -64,36 +64,36 @@ ul li{
 .opener ~ .collapsible .opener {
   font-size: 0.8em;
 }
-.opener ~ .collapsible{
+.opener ~ .collapsible {
   opacity: 0;
   overflow: hidden;
 
   transition: all 0.2s cubic-bezier(0.865, 0.14, 0.095, 0.87);
 }
 
-@keyframes collapse{
+@keyframes collapse {
   from {
-    opacity:1;
+    opacity: 1;
     height: 100%;
     padding-left: 1em;
   }
 
-  to{
+  to {
     opacity: 0;
     height: 0;
     padding-left: 0;
   }
 }
 
-@keyframes expand{
+@keyframes expand {
   from {
-    opacity:0;
-    height:0;
+    opacity: 0;
+    height: 0;
     padding-left: 0;
   }
 
-  to{
-    opacity:1;
+  to {
+    opacity: 1;
     height: 100%;
     padding-left: 1em;
   }
@@ -447,8 +447,9 @@ ul.table-of-contents {
   display: none;
 }
 
-.reference-1{
+.reference-1 {
   border: 1px solid white;
+  cursor: pointer;
   padding: 5px;
   text-align: center;
   border-radius: 5px;
@@ -456,28 +457,29 @@ ul.table-of-contents {
   flex-basis: 25%;
   min-height: 100px;
   min-width: 100px;
+  user-select: none;
 }
-.reference-1:hover{
+.reference-1:hover {
   background-color: hsl(351, 100%, 86%);
   border: 1px solid hsl(351, 100%, 79%);
-  color:darkblue;
+  color: darkblue;
   transition: all 0.1s ease-in-out;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
 }
-.reference-1 h1{
-  margin-bottom:10px;
+.reference-1 h1 {
+  margin-bottom: 10px;
 }
-.reference-1 img{
-  max-width:200px;
-  max-height:200px;
+.reference-1 img {
+  max-width: 200px;
+  max-height: 200px;
   vertical-align: middle;
-  margin:0 auto;
+  margin: 0 auto;
 }
-.reference-1 .author{
+.reference-1 .author {
   padding-top: 6px;
 }
 
-.reference-1-na{
+.reference-1-na {
   border: 1px solid white;
   padding: 5px;
   text-align: center;
@@ -485,25 +487,24 @@ ul.table-of-contents {
   flex-grow: 0;
   flex-basis: 25%;
 }
-.reference-1-na:hover{
+.reference-1-na:hover {
   background-color: hsl(351, 100%, 98%);
   border: 1px solid hsl(351, 100%, 89%);
-  color:darkblue;
+  color: darkblue;
   transition: all 0.1s ease-in-out;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
 }
-.reference-1-na:hover:before{
-
-  color:hsl(0, 0%, 36%);
+.reference-1-na:hover:before {
+  color: hsl(0, 0%, 36%);
   font-size: 1.5em;
   content: "Not available";
-  font-family: sans-serif ;
+  font-family: sans-serif;
 }
 
-.reference-1-na::before{
-  font-size:48px;
+.reference-1-na::before {
+  font-size: 48px;
   color: hsl(0, 0%, 83%);
-  content:"\f02d";
+  content: "\f02d";
   font-family: "Font Awesome 5 Free";
   display: inline-block;
   position: relative;
@@ -511,36 +512,44 @@ ul.table-of-contents {
   top: 50%;
   transform: translate(0, -50%);
 }
-.tutor-1{
-  width:100%;
+.tutor-1 {
+  width: 100%;
   flex-basis: 20%;
 }
 
-.tutor-1 img.profile{
+.tutor-1 img.profile {
   text-align: center;
-  max-width:100px;
-  max-height:100px;
+  max-width: 100px;
+  max-height: 100px;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
-
 }
 
-.tutor-1 .banner{
+.tutor-1 .banner {
   width: 100%;
   max-height: 4em;
 }
-
-.course-logo{
-  position:relative;
+.course-artefact {
+  border-radius: 6px;
+  border: 1px solid hsla(0, 0%, 100%, 100%);
+}
+.course-artefact:hover {
+  background-color: hsl(0, 0%, 99%);
+  border-radius: 6px;
+  border: 1px solid hsl(0, 0%, 90%);
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.07);
+}
+.course-logo {
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
-.course-logo-fill{
+.course-logo-fill {
   background-color: hsl(296.4, 64.7%, 20%);
 }
 
-.tab{
+.tab {
   appearance: none;
   border-bottom: 1px solid lightgray;
   border-radius: 0;
@@ -550,41 +559,130 @@ ul.table-of-contents {
   font-weight: 500;
   font-size: 1.1em;
   min-width: 64px;
-  min-height:58px;
+  min-height: 58px;
   padding: 0;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
 
   -ms-appearance: none;
-  -ms-transition: all 0.1s ease-in-out;
   -moz-appearance: none;
-  -moz-transition: all 0.1s ease-in-out;
   -webkit-appearance: none;
-  -webkit-transition: all 0.1s ease-in-out;
-
 }
-.tab:hover{
- border-bottom: 1px solid lightgray;
-  background-color:hsl(296.4, 64.7%, 20%);
+.tab:hover {
+  border-bottom: 2px solid lightgray;
+  background-color: hsl(296.4, 64.7%, 20%);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  border: 1px solid #ed5565;
   color: #ed5565;
 }
-.tab.focus{
+.tab.focus {
   border-bottom: 2px solid #ed5565;
+  font-weight: 700;
+}
+.tab h3 {
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+ol.li-spaced-sm li {
+  padding: 0.2em;
+}
+.doc {
+  max-width: 48px;
+  max-height: 48px;
+}
+
+.accordion2 {
+  display: block;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.accordion2 .xxxx .accordion-body{
+  -webkit-transition: height 0.2s ease;
+  transition: height 0.2s ease;
+}
+.accordion2 button{
+  outline: none;
+  width:100%;
+}
+.accordion__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  flex-direction: row;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-transition: box-shadow 300ms ease;
+  -ms-flex-direction: row;
+
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgb(46 50 60 / 9%);
+  transition: box-shadow 300ms ease;
+  text-align: left;
+  text-decoration: none;
+  user-select: none;
+  cursor:pointer;
+}
+.accordion-header.active{
   font-weight:700;
 }
-.tab h3{
-  margin:0;
-  padding:0;
+.accordion-header.js-accordion-header {
+  cursor: pointer;
 }
-ol.li-spaced-sm li{
-  padding: 0.2em;
+.accordion-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  color: #2e323c;
+  width:100%;
+}
+.accordion__item > .accordion-header:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  content: "\f077";
+  color: #000;
+  float: right;
+  position: relative;
+  display: block;
+  top: 2px;
+  transition: 0.3s all;
+  transform: rotate(-180deg);
+  opacity: 100;
+
+}
+.accordion2 .xxxx[aria-expanded='true'] .accordion__item > .accordion-header:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  content: "\f077";
+  color: #000;
+  float: right;
+  position: relative;
+  display: block;
+  top: 2px;
+  transition: 0.3s all;
+  transform: rotate(-0deg);
+  opacity: 100;
+}
+.accordion-body {
+  display: block;
+  padding-right: 8px;
+  padding-left: 64px;
+  color: #9096a4;
 }

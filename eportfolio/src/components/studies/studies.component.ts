@@ -32,7 +32,6 @@ export class StudiesComponent implements OnInit {
   }
 
   activateCourse(v: { item: CourseModule, index: number}){
-    console.log("activateCourse: " + v.item.longTitle);
     this.dataService.selectedCourse = v.item;
     this.router.navigate(["studies/module", v.index]);
   }

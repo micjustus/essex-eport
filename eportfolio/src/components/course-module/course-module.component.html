@@ -1,32 +1,3 @@
-<!-- <div class="col hide-on-small-only m3 xl3 offset-xl1">
-      <div class="toc-wrapper pin-top" style="top: 0px">
-        <div style="height: 1px">
-          <ul class="section table-of-contents" name="toc" id="toc">
-            <li class=".nav-link" nav-id="outcomes">
-              <a routerLink="/module" fragment="outcomes">Learning Outcomes</a>
-            </li>
-            <li class=".nav-link" nav-id="artefacts">
-              <a
-                routerLink="/module"
-                fragment="artefacts"
-                routerLinkActive="active"
-                >Unit Artefacts</a
-              >
-            </li>
-            <li class=".nav-link" nav-id="writing">
-              <a routerLink="/module" fragment="writing">Reflective Writing</a>
-            </li>
-            <li class=".nav-link" nav-id="notes">
-              <a routerLink="/module" fragment="notes">Team Notes</a>
-            </li>
-            <li class=".nav-link" nav-id="matrix">
-              <a routerLink="/module" fragment="matrix">Skills Matrix</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
-
 <div class="flex flex-col w-4/5 mx-auto my-3 p-10">
   <div class="mt-8 flex flex-row shadow-lg">
     <div
@@ -37,7 +8,6 @@
     </div>
 
     <div class="">
-
       <div>
         <div class="flex flew-row">
           <div class="p-4 bg-white rounded-tr-lg rounded-br-lg text-left border-b border-t border-gray-200">
@@ -73,9 +43,7 @@
                  alt="Profile Picture" />
           </div>
         </div>
-
       </div>
-
 
       <div class="p-10">
         <h4 class="text-md font-semibold text-gray-400 mb-4">
@@ -89,8 +57,6 @@
       </div>
     </div>
   </div>
-
-
 
   <div class="mt-10">
     <div class="flex flex-row w-full relative">
@@ -119,60 +85,43 @@
     <div class="w-full  p-4">
       <div id="tab-units"
            class="tab-content">
-        <div class="mx-auto flex flew-row flex-wrap  space-y-4 space-x-4">
-          <div *ngFor="let unit of this.course.units" class="reference-1">
-            <h4>{{ unit.title }}</h4>
-            <span>{{ unit.description }}</span>
+        <div class="accordion2">
+          <div *ngFor="let unit of this.course.units">
+            <div aria-expanded="false"
+                 class="xxxx">
+              <div class="accordion__item">
+
+                  <div class="accordion-header space-x-4 border border-gray-200 p-2">
+                    <h4 class=""
+                        style="flex-basis:10%">{{ unit.title }}</h4>
+
+                    <div style="flex-basis:90%"><span>{{ unit.description }}</span></div>
+                  </div>
+
+              </div>
+
+              <div class="accordion-body">
+                <span> THIS ARE CONTENTIONS </span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
 
       <div id="tab-artefacts"
-           class="tab-content">
-        <div *ngFor="let art of course.artefacts"
-             class="course-artefact">
-          <img src=""
-               alt="Artefact icon"
-               class="doc"
-               src="../../assets/images/document.png" />
-          <div class="in-flex-col">
-            <span><strong>{{ art.title }}</strong><br />
-              {{ art.description }}</span>
-            <a class="button"
-               *ngIf="art.URL"
-               href="{{ art.URL }}"
-               target="_blank">View</a>
-          </div>
-        </div>
+           class="tab-content flex flex-col space-y-2">
+        <app-artefacts [imageURL]="'../../assets/images/document.png'"
+                       [items]=course.artefacts></app-artefacts>
       </div>
 
       <div id="tab-writings"
-           class="tab-content">
-        <div *ngFor="let ref of course.reflections; let i = index"
-             class="course-artefact">
-          <img src=""
-               alt="Reflection"
-               class="doc"
-               src="../../assets/images/cloud.png" />
-          <div class="in-flex-col collapsible">
-            <input type="checkbox"
-                   id="checkbox-{{ i }}" />
-            <label class="checkbox-label"
-                   for="checkbox-{{ i }}"
-                   (click)="setElemHeight($event, 'expander-' + i)">
-              <strong class="collapse-title">{{ ref.title }}</strong>
-            </label>
-            <div class="collapse-content"
-                 id="expander-{{ i }}">
-              <p><em [innerHTML]="ref.description"></em></p>
-              <a class="button"
-                 *ngIf="ref.URL"
-                 routerLink="/reflections"
-                 (click)="setPiece(ref)">Read More</a>
-            </div>
-          </div>
-        </div>
+           class="tab-content flex flex-col space-y-2">
+        <app-artefacts [items]=course.reflections
+                       [imageURL]="'../../assets/images/cloud.png'">
+        </app-artefacts>
       </div>
+
 
       <div id="tab-notes"
            class="tab-content">

@@ -15,7 +15,7 @@ export class ReflectionsComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.item = this.dataService.selectedWriting;
+    this.item = <Reflection>this.dataService.selectedWriting;
   }
 
 }

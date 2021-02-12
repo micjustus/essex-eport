@@ -24,18 +24,18 @@ export class LaunchingCSModuleItem extends CourseModule {
     ]
 
     this.units = [
-      { title: "Unit 1", description: "Computer Scientist Roles and Responsibilites" },
-      { title: "Unit 2", description: "Computer Hardware" },
-      { title: "Unit 3", description: "Computer Hardware" },
-      { title: "Unit 4", description: "Computer Hardware" },
-      { title: "Unit 5", description: "Computer Hardware" },
-      { title: "Unit 6", description: "Computer Hardware" },
-      { title: "Unit 7", description: "Computer Hardware" },
-      { title: "Unit 8", description: "Computer Hardware" },
-      { title: "Unit 9", description: "Computer Hardware" },
-      { title: "Unit 10", description: "Computer Hardware" },
-      { title: "Unit 11", description: "Computer Hardware" },
-      { title: "Unit 12", description: "Computer Hardware" }
+      { title: "Unit 1", description: "Responsibilities and Challenges" },
+      { title: "Unit 2", description: "Computer Architecture" },
+      { title: "Unit 3", description: "Emerging Trends in Computer Science" },
+      { title: "Unit 4", description: "Computing Infrastructure and Network" },
+      { title: "Unit 5", description: "Software as a Tool - Functionality and Development Methodologies" },
+      { title: "Unit 6", description: "System Software – Operating Systems" },
+      { title: "Unit 7", description: "Data Abstraction" },
+      { title: "Unit 8", description: "Algorithms and Basic Programming Concepts" },
+      { title: "Unit 9", description: "Solving Problems Using Python" },
+      { title: "Unit 10", description: "Data Representation using Database Concepts" },
+      { title: "Unit 11", description: "Advanced SQL" },
+      { title: "Unit 12", description: "Research Topics in Computer Science – Data Science, AI and Standards" }
     ]
 
     this.currentUnitIndex = 1;

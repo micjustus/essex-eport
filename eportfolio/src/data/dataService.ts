@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
+import { Artefact } from "./Artefact";
 import { CourseModule } from "./courseModule";
-import { Reflection } from "./reflection";
 import { Tutor } from "./tutor";
 
 @Injectable()
 export class DataService{
   selectedCourse!: CourseModule;
-  selectedWriting!: Reflection;
+  selectedWriting!: Artefact;
   currentModule!: CourseModule;
   modules: CourseModule[] = [];
 
@@ -16,8 +16,6 @@ export class DataService{
     this.modules.forEach((mod, idx)=>{
       res.push(mod.tutor);
     });
-
-    console.log("GET tutors => " + res.length);
 
     return res;
   }

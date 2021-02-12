@@ -66,8 +66,6 @@ export class SidebarComponent implements OnInit {
   }
 
   select(value: CourseModule, index: number) {
-    console.log('module has been selected. Emit an event');
-
     this.moduleSelected.emit({
       item: value,
       index: index,
