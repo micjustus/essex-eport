@@ -605,9 +605,22 @@ ol.li-spaced-sm li {
   padding-right: 15px;
   padding-left: 15px;
 }
+.accordion2 .xxxx .accordion__item:hover{
+  background-color: #bf54c50d;
+  border-radius: 4px;
+}
 .accordion2 .xxxx .accordion-body{
   -webkit-transition: height 0.2s ease;
   transition: height 0.2s ease;
+  margin-top: 10px;
+}
+.accordion2 .xxxx[aria-expanded='true'] .accordion__item{
+  box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.07);
+  border: 1px solid hsl(354, 81%, 83%);
+  border-radius: 4px;
+}
+.accordion2 .xxxx[aria-expanded='true'] .accordion-body{
+  margin-bottom: 20px;
 }
 .accordion2 button{
   outline: none;
@@ -629,7 +642,6 @@ ol.li-spaced-sm li {
   -ms-flex-direction: row;
 
   background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgb(46 50 60 / 9%);
   transition: box-shadow 300ms ease;
   text-align: left;
   text-decoration: none;
@@ -637,7 +649,7 @@ ol.li-spaced-sm li {
   cursor:pointer;
 }
 .accordion-header.active{
-  font-weight:700;
+  font-weight:500;
 }
 .accordion-header.js-accordion-header {
   cursor: pointer;
@@ -656,7 +668,7 @@ ol.li-spaced-sm li {
   font-weight: 900;
   font-size: 16px;
   content: "\f077";
-  color: #000;
+  color: rgba(0, 0, 0, 0.7);
   float: right;
   position: relative;
   display: block;
@@ -671,7 +683,7 @@ ol.li-spaced-sm li {
   font-weight: 900;
   font-size: 16px;
   content: "\f077";
-  color: #000;
+  color: hsl(354, 81%, 73%);
   float: right;
   position: relative;
   display: block;
