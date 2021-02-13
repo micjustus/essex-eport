@@ -85,28 +85,7 @@
     <div class="w-full  p-4">
       <div id="tab-units"
            class="tab-content">
-        <div class="accordion2">
-          <div *ngFor="let unit of this.course.units">
-            <div aria-expanded="false"
-                 class="xxxx">
-              <div class="accordion__item">
-
-                  <div class="accordion-header space-x-4 p-2">
-                    <h4 class=""
-                        style="flex-basis:10%">{{ unit.title }}</h4>
-
-                    <div style="flex-basis:90%"><span>{{ unit.description }}</span></div>
-                  </div>
-
-              </div>
-
-              <div class="accordion-body">
-                <span> THIS ARE CONTENTIONS </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
+           <app-accordion [items]=this.course.units></app-accordion>
       </div>
 
       <div id="tab-artefacts"

@@ -19,6 +19,8 @@ import { StudiesComponent } from '../components/studies/studies.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { DataService } from 'src/data/dataService';
 import { ArtefactsComponent } from '../components/artefacts/artefacts.component';
+import { AccordionComponent } from 'src/components/accordion/accordion.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ArtefactsComponent } from '../components/artefacts/artefacts.component'
     HeroComponent,
     StudiesComponent,
     SidebarComponent,
-    ArtefactsComponent
+    ArtefactsComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,

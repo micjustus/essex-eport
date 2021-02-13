@@ -3,6 +3,7 @@
     Masters of Computer Science
   </h2>
 
+  <!-- COURSE OVERVIEW -->
   <div class="mt-8 flex flex-row shadow-lg">
     <div
       class="page-slash w-full md:w-1/4 p-4 rounded-tl-lg rounded-bl-lg text-left bg-gray-800 text-white border border-gray-200"
@@ -66,12 +67,12 @@
   </div>
 
   <!---- TUTORS -->
-  <div class="w-full min-w-full">
+  <div class="w-full min-w-full mt-8">
     <h3 class="text-2xl font-semibold text-center text-gray-600 mb-4 mt-4">
       Tutors
     </h3>
 
-    <div class="flex flew-row space-x-4">
+    <div class="flex flew-row space-x-4 ">
       <!-- Tutor 1-->
       <div *ngFor="let tutor of tutors; index as idx"
         class="tutor-1 text-center flex flex-col bg-white shadow-md rounded-lg overflow-hidden border border-gray-100 transition-shadow hover:shadow-xl"
@@ -103,7 +104,8 @@
     </div>
   </div>
 
-  <div class="w-full min-w-full">
+  <!-- REFERENCE MATERIALS -->
+  <div class="w-full min-w-full mt-8">
     <h3 class="text-2xl font-semibold text-center text-gray-600 mb-4 mt-4">
       Reference Materials
     </h3>
@@ -113,10 +115,13 @@
     >
       <div class="reference-1">
         <h1>Computer Science: An Overview</h1>
+        <a href="https://www.amazon.co.uk/Computer-Science-Overview-Glenn-Brookshear/dp/1292263423/ref=sr_1_1?crid=2GZPT9PLOBILB&dchild=1&keywords=computer+science+an+overview%2C+global+edition&qid=1613218047&sprefix=computer+science+glob%2Caps%2C173&sr=8-1"
+        target="_blank" rel="noopener">
         <img
           src="../../assets/images/computer_science_overview_cover.jfif"
           alt="Book Cover"
         />
+      </a>
         <span class="author">Brookshear & Brylow</span>
       </div>
 
