@@ -11,14 +11,15 @@ export class ArtefactsComponent implements OnInit {
 
   @Input() items!: Artefact[];
   @Input() imageURL: string='';
-  @Input() rootPath: string='/reflections';
+  @Input() rootPath: string='/studies/reflections';
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
 
-  setPiece(writing: Artefact) {
+  setPiece(items: Artefact[], writing: Artefact) {
     this.dataService.selectedWriting = writing;
+    this.dataService.writings = items;
   }
 }

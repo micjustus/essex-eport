@@ -4,7 +4,7 @@ export class LaunchingCSModuleItem extends CourseModule {
   constructor(path: string) {
     super("Launching", "Launching into Computer Science", path);
 
-    this.tutor = { name:'Nawaz Khan', course:"Launching into computer Science", profilePicture:"Nawaz Khan.jpg", bibliography:"#"};
+    this.tutor = { name:'Nawaz Khan', course:"Launching into computer Science", profilePicture:"Nawaz Khan.jpg", bibliography:"https://online.essex.ac.uk/kolbiography/doctor-nawaz-khan/"};
 
     this.description =  "This module deals with aspects of computer scientists such as their roles and ethical responsibilities, computer architectures, data structures, computational algorithms and encouraging of on-going professional development.";
 
@@ -26,7 +26,7 @@ export class LaunchingCSModuleItem extends CourseModule {
     this.units = [
       { title: "Unit 1", description: "Responsibilities and Challenges" },
       { title: "Unit 2", description: "Computer Architecture" },
-      { title: "Unit 3", description: "Emerging Trends in Computer Science", content: "Hello there New Trends. Such a trendsettah!"},
+      { title: "Unit 3", description: "Emerging Trends in Computer Science", contentType: "markdown", content: "assets/artefacts/m01u3.md"},
       { title: "Unit 4", description: "Computing Infrastructure and Network" },
       { title: "Unit 5", description: "Software as a Tool - Functionality and Development Methodologies" },
       { title: "Unit 6", description: "System Software – Operating Systems" },

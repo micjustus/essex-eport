@@ -21,11 +21,13 @@ const routes: Routes = [
       },
       {
         path: 'module/:id', component: CourseModuleComponent,
+        children:[
+        ]
       },
       { path: 'essex', component: EssexComponent },
+      { path: "reflections", component: ReflectionsComponent },
     ]
   },
-  { path: "reflections", component: ReflectionsComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

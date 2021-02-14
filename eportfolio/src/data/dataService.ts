@@ -9,6 +9,7 @@ export class DataService{
   selectedWriting!: Artefact;
   currentModule!: CourseModule;
   modules: CourseModule[] = [];
+  writings: Artefact[] = [];
 
   public get tutors(): Tutor[]{
     let res: Tutor[] =[];

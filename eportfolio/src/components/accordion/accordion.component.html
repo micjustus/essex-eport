@@ -13,7 +13,12 @@
       </div>
       <div *ngIf="unit.content"
            class="accordion-body">
-        {{ unit.content }}
+           <p>Content Type: {{unit.contentType}}</p>
+           <div *ngIf="unit.contentType == 'markdown'; else elseBlock" markdown [src]=unit.content class="markdown">
+           </div>
+          <ng-template #elseBlock>
+            {{ unit.content }}
+          </ng-template>
       </div>
     </div>
 

@@ -1,9 +1,6 @@
 import {
-  AfterContentChecked,
   AfterViewChecked,
-  AfterViewInit,
   Component,
-  DoCheck,
   Input,
   OnChanges,
   OnInit,
@@ -115,4 +112,5 @@ export class AccordionComponent implements OnInit, AfterViewChecked, OnChanges {
       this.lastElement = elm;
     }
   }
+
 }

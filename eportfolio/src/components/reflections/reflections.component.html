@@ -1,19 +1,21 @@
-<div class="w-4/5 mx-auto">
+<div class="mx-auto">
 
-      <div>
-        <h2 class="course-title">Reflective Writing</h2>
-        <h4 class="course-title-sm">{{ item.title }}</h4>
-        <span>
-          {{ item.description }}
-        </span>
-      </div>
+  <div>
+    <h2 class="course-title">Reflective Writing</h2>
+    <h4 class="course-title-sm">{{ item.title }}</h4>
+    <span>
+      {{ item.description }}
+    </span>
+  </div>
 
-      <br />
+  <br />
 
-      <div>
-        <h3>Thoughts and Reflections</h3>
-        <div markdown [src]="'assets/artefacts/reflections/' + item.content" class="flex-col">
-        </div>
-      </div>
-
+  <h3>Thoughts and Reflections</h3>
+  <div>
+    <div id="reflections"
+        markdown
+         [src]="'assets/artefacts/reflections/' + item.content"
+         class=" markdown flex-col">
+    </div>
+  </div>
 </div>

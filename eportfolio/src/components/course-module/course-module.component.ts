@@ -38,7 +38,7 @@ export class CourseModuleComponent implements OnInit, AfterViewInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
+    public router: Router,
     private dataService: DataService
   ) {
 

@@ -7,4 +7,6 @@ export class ModuleUnit {
   public endDate?: Date;
   public contentType?: string = 'text/html';
   public content?: string;
+
+
 }

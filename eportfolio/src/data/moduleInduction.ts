@@ -6,7 +6,7 @@ export class InductionModuleItem extends CourseModule {
   constructor(path: string) {
     super("Induction", "Induction into Computer Science", path);
 
-    this.tutor = { name:'Vivian Edema', course:"Introduction to Online Learning", profilePicture:"vivian edema.png", bibliography:"#"};
+    this.tutor = { name:'Vivian Edema', course:"Introduction to Online Learning", profilePicture:"vivian edema.png", bibliography:"https://online.essex.ac.uk/meet-our-tutors/"};
 
     this.description =
     "This module introduces candidates into the concept of online study and familiarises students with " +
@@ -32,15 +32,15 @@ export class InductionModuleItem extends CourseModule {
         type: "Blog",
         title: "Plagiarism",
         description: "In this short article, I reflect on my understanding of plagiarism before and after the induction module.",
-        URL: "reflections",
-        content: "plagiarism.md"
+        URL: "/reflections",
+        content: "m0_plagiarism.md"
       },
 
       {
         type: "Blog",
         title: "Understanding Computer Science",
         description: "My reflections on how my work experience helped to confirm research for the induction assignment.",
-        URL: "reflections",
+        URL: "/reflections",
         content: "understanding-cs.md"
       },
 
@@ -48,8 +48,8 @@ export class InductionModuleItem extends CourseModule {
         type: "Blog",
         title: "e-Portfolios",
         description: "In this short article I reflect on the concept of <strong>e-portfolios</strong> and the thoughts and opinions of fellow students.",
-        URL: "reflections",
-        content: "eportfolios.md"
+        URL: "/reflections",
+        content: "m0_eportfolios.md"
       },
 
     ]

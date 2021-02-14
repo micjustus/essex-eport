@@ -518,6 +518,9 @@ ul.table-of-contents {
   transform-style: preserve-3d;
   transition: 0.1s ease-in-out transform, 0.1s ease-in-out box-shadow;
 }
+.tutor-1:hover{
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
 
 .tutor-1 img.profile {
   text-align: center;
@@ -616,13 +619,19 @@ ol.li-spaced-sm li {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+.accordion2 .accordion__item[aria-expanded=true]{
+  position:sticky;
+  top: 0;
+}
 .accordion2 .accordion__item[aria-expanded="true"] .accordion-header.active {
   box-shadow: 0 0px 5px 1px rgba(0, 0, 0, 0.07);
   border: 1px solid hsla(297, 49%, 75%, 0.5);
   border-radius: 4px;
-  background-color: #bf54c50d;
+  background-color: hsla(297, 49%, 55%, 0.051);
+  backdrop-filter: blur(10px);
+  height: 48px;
+  align-items: center;
 }
-
 .accordion2 .accordion__item[aria-expanded="false"] .accordion-header.active {
   border: 1px solid hsla(297, 49%, 75%, 0.5);
   border-radius: 4px;
@@ -631,6 +640,7 @@ ol.li-spaced-sm li {
 .accordion2 .accordion__item[aria-expanded="true"] + .accordion-body {
   margin: 20px auto;
   opacity: 100;
+  border-bottom: 2px dashed;
 }
 .accordion2 .accordion_item[aria-expanded="false"] + .accordion-body {
   opacity: 0;
@@ -658,7 +668,6 @@ ol.li-spaced-sm li {
 
   -webkit-transition: box-shadow 300ms ease;
 
-  background-color: #fff;
   transition: box-shadow 300ms ease;
   text-align: left;
   text-decoration: none;
@@ -697,4 +706,52 @@ ol.li-spaced-sm li {
   display: block;
   padding: 0 8px 0 64px;
   color: #9096a4;
+}
+.markdown{
+  line-height: 1.1em;
+  max-width: 80ch;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.markdown h1, .markdown h2, .markdown h3{
+  letter-spacing: 0;
+  line-height: 36px;
+  margin: 0;
+  margin-top: 1.95em;
+  font-size: 2em;
+  font-weight: 700;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  word-break: break-word;
+  color: rgba(41, 41, 41, 1);
+}
+.markdown h2{
+  font-size: 1.6em;
+}
+.markdown h3 {
+  font-size: 1.2em;
+}
+.markdown li{
+  list-style-type: disc;
+  list-style-position: inside;
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  color: rgba(41, 41, 41, 1);
+}
+.markdown p{
+  margin-top: 0.86em;
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  color: rgba(41, 41, 41, 1);
+  font-weight: 400;
+}
+.nav-reflection{
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 Free";
+  font-size: 3em;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  background-color: black;
+  color: white;
 }
