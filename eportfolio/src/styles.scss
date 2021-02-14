@@ -613,30 +613,48 @@ ol.li-spaced-sm li {
   border-radius: 4px;
 }
 .accordion2 .accordion-body {
-  -webkit-transition: height 0.2s ease;
-  transition: height 0.2s ease, opacity 0.2s ease;
-  margin-top: 10px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.accordion2 .accordion__item[aria-expanded="true"] {
-  box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.07);
+.accordion2 .accordion__item[aria-expanded="true"] .accordion-header.active {
+  box-shadow: 0 0px 5px 1px rgba(0, 0, 0, 0.07);
   border: 1px solid hsla(297, 49%, 75%, 0.5);
   border-radius: 4px;
   background-color: #bf54c50d;
 }
-.accordion2 .accordion__item[aria-expanded="true"] .accordion-body {
-  margin-bottom: 20px;
+
+.accordion2 .accordion__item[aria-expanded="false"] .accordion-header.active {
+  border: 1px solid hsla(297, 49%, 75%, 0.5);
+  border-radius: 4px;
+  background-color: #bf54c50d;
+}
+.accordion2 .accordion__item[aria-expanded="true"] + .accordion-body {
+  margin: 20px auto;
   opacity: 100;
 }
-.accordion2 .accordion_item[aria-expanded="false"] .accordion-body {
+.accordion2 .accordion_item[aria-expanded="false"] + .accordion-body {
   opacity: 0;
+}
+.accordion2 .accordion__item[aria-expanded="true"] .accordion-header.expander:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  content: "\f077";
+  color: hsl(354, 81%, 73%);
+  float: right;
+  position: relative;
+  display: block;
+  top: 2px;
+  transition: 0.3s all cubic-bezier(0.865, 0.14, 0.095, 0.87);
+  transform: rotate(-0deg);
+  opacity: 100;
 }
 .accordion2 button {
   outline: none;
   width: 100%;
 }
 .accordion__item {
-  overflow: hidden;
-  width: 100%;
+   width: 100%;
 
   -webkit-transition: box-shadow 300ms ease;
 
@@ -674,23 +692,9 @@ ol.li-spaced-sm li {
   transform: rotate(-180deg);
   opacity: 100;
 }
-.accordion2 .accordion__item[aria-expanded="true"] > .accordion-header.expander:after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 16px;
-  content: "\f077";
-  color: hsl(354, 81%, 73%);
-  float: right;
-  position: relative;
-  display: block;
-  top: 2px;
-  transition: 0.3s all cubic-bezier(0.865, 0.14, 0.095, 0.87);
-  transform: rotate(-0deg);
-  opacity: 100;
-}
+
 .accordion-body {
   display: block;
-  padding-right: 8px;
-  padding-left: 64px;
+  padding: 0 8px 0 64px;
   color: #9096a4;
 }

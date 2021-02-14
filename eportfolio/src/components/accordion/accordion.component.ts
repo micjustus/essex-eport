@@ -96,11 +96,6 @@ export class AccordionComponent implements OnInit, AfterViewChecked, OnChanges {
         body.style.height = '0';
         body.style.overflow = 'hidden';
       }
-
-      // body = this.lastElement.querySelector(
-      //   '.accordion-header'
-      // ) as HTMLElement;
-      // body.classList.remove('active');
     }
 
     if (itemToggle == 'false') {
