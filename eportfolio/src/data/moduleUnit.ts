@@ -5,4 +5,6 @@ export class ModuleUnit {
   public outcome?: string= '';
   public startDate?: Date;
   public endDate?: Date;
+  public contentType?: string = 'text/html';
+  public content?: string;
 }

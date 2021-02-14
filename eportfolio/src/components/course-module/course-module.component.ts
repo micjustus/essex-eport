@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CourseModule } from 'src/data/courseModule';
@@ -32,7 +32,7 @@ function switchTabs(this: HTMLElement, ev: MouseEvent): void {
   templateUrl: './course-module.component.html',
   styleUrls: ['./course-module.component.css'],
 })
-export class CourseModuleComponent implements OnInit, AfterViewInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked {
+export class CourseModuleComponent implements OnInit, AfterViewInit {
   course: CourseModule = <CourseModule>{};
   private subs!: Subscription;
 
@@ -41,7 +41,6 @@ export class CourseModuleComponent implements OnInit, AfterViewInit, OnChanges, 
     private router: Router,
     private dataService: DataService
   ) {
-//    console.log("[CourseModuleComponent]: Constructor");
 
     if (
       !this.dataService.selectedCourse ||
@@ -56,23 +55,7 @@ export class CourseModuleComponent implements OnInit, AfterViewInit, OnChanges, 
     }
   }
 
-  ngAfterViewChecked(): void {
-  //  console.log("[CourseModuleComponent]: AfterViewChecked");
-
-  }
-  ngAfterContentChecked(): void {
-    //console.log("[CourseModuleComponent]: AfterContentChecked");
-  }
-  ngAfterContentInit(): void {
-    //console.log("[CourseModuleComponent]: AfterContentInit");
-  }
-  ngDoCheck(): void {
-    //console.log("[CourseModuleComponent]: DoCheck");
-  }
-
   ngAfterViewInit(): void {
-    //console.log("[CourseModuleComponent]: AfterViewInit");
-
     var elm: HTMLElement;
     var tabAreas = document.querySelectorAll('div.tab-content');
     for (let index = 0; index < tabAreas.length; index++) {
@@ -87,19 +70,11 @@ export class CourseModuleComponent implements OnInit, AfterViewInit, OnChanges, 
     }
   }
 
-  ngOnChanges(){
-    //console.log("[CourseModuleComponent]: OnChanges");
-  }
-
   ngOnInit(): void {
-    //console.log("[CourseModuleComponent]: OnInit");
-
     this.course = this.dataService.selectedCourse;
   }
 
   ngOnDestroy(): void {
-    console.log("[CourseModuleComponent]: OnDestroy");
-
     if (this.subs) this.subs.unsubscribe();
   }
 }

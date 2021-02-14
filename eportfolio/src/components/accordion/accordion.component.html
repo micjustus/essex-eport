@@ -1,21 +1,19 @@
 <div class="accordion2">
   <div *ngFor="let unit of this.items">
     <div aria-expanded="false"
-         class="xxxx"
-         >
+         class="xxxx">
       <div class="accordion__item">
 
-          <div class="accordion-header space-x-4 p-2">
-            <h4 class=""
-                style="flex-basis:10%">{{ unit.title }}</h4>
+        <div class="accordion-header space-x-4 p-2" [ngClass]="{expander: unit.content}">
+          <h4 class=""
+              style="flex-basis:10%">{{ unit.title }}</h4>
 
-            <div style="flex-basis:90%"><span>{{ unit.description }}</span></div>
-          </div>
-
+          <div style="flex-basis:90%"><span>{{ unit.description }}</span></div>
+        </div>
       </div>
-
-      <div class="accordion-body">
-        <span> THIS ARE CONTENTIONS </span>
+      <div *ngIf="unit.content"
+           class="accordion-body">
+        {{ unit.content }}
       </div>
     </div>
 

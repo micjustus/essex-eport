@@ -1,5 +1,4 @@
-import { isNgTemplate } from '@angular/compiler';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourseModule } from 'src/data/courseModule';
 import { DataService } from 'src/data/dataService';
