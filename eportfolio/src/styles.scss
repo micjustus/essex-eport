@@ -608,26 +608,26 @@ ol.li-spaced-sm li {
   padding-right: 15px;
   padding-left: 15px;
 }
-.accordion2 .xxxx .accordion__item:hover {
+.accordion2 .accordion__item:hover {
   background-color: #bf54c50d;
   border-radius: 4px;
 }
-.accordion2 .xxxx .accordion-body {
+.accordion2 .accordion-body {
   -webkit-transition: height 0.2s ease;
   transition: height 0.2s ease, opacity 0.2s ease;
   margin-top: 10px;
 }
-.accordion2 .xxxx[aria-expanded="true"] .accordion__item {
+.accordion2 .accordion__item[aria-expanded="true"] {
   box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.07);
   border: 1px solid hsla(297, 49%, 75%, 0.5);
   border-radius: 4px;
   background-color: #bf54c50d;
 }
-.accordion2 .xxxx[aria-expanded="true"] .accordion-body {
+.accordion2 .accordion__item[aria-expanded="true"] .accordion-body {
   margin-bottom: 20px;
   opacity: 100;
 }
-.accordion2 .xxxx[aria-expanded="false"] .accordion-body {
+.accordion2 .accordion_item[aria-expanded="false"] .accordion-body {
   opacity: 0;
 }
 .accordion2 button {
@@ -674,7 +674,7 @@ ol.li-spaced-sm li {
   transform: rotate(-180deg);
   opacity: 100;
 }
-.accordion2 .xxxx[aria-expanded="true"] .accordion__item > .accordion-header.expander:after {
+.accordion2 .accordion__item[aria-expanded="true"] > .accordion-header.expander:after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 16px;
