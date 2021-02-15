@@ -13,6 +13,7 @@ export class ReflectionsComponent implements OnInit {
   @Input() item!: Reflection;
   private currentIndex: number = -1;
   loadFailed = false;
+  navLeft: boolean = false;
 
   constructor(private dataService: DataService) { }
 
@@ -46,19 +47,31 @@ export class ReflectionsComponent implements OnInit {
 
   navigateLeft(){
     if (this.currentIndex>0){
+      var item = document.querySelector(".carousel-item") as HTMLElement;
+      if (item) {
+        item.style.opacity = '0';
+
+      }
+
       this.loadFailed=false;
+      this.navLeft = true;
       this.item = this.dataService.writings[this.currentIndex-1] as Reflection;
       this.currentIndex = this.currentIndex - 1;
-      console.log("LEFT " + this.currentIndex);
     }
   }
 
   navigateRight(){
     if (this.currentIndex+1<=this.dataService.writings.length-1){
+      var item = document.querySelector(".carousel-item") as HTMLElement;
+      if (item) {
+        item.style.opacity = '0';
+
+      }
+
       this.loadFailed=false;
+      this.navLeft = false;
       this.item = this.dataService.writings[this.currentIndex+1] as Reflection;
       this.currentIndex = this.currentIndex + 1;
-      console.log("RIGHT " + this.currentIndex);
     }
   }
 }

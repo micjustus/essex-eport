@@ -1,8 +1,7 @@
 <div class="mx-auto">
 
-  <div class="markdown">
-    <svg id="blog-title" width="100%"
-         height="100">
+  <div>
+    <svg id="blog-title">
       <filter id='money'>
         <feMorphology in='SourceGraphic'
                       operator='dilate'
@@ -139,12 +138,19 @@
   <ng-template #showBlock>
     <div class="carousel">
 
+      <div>
+        <div *ngIf="this.hasPrevious" class="carousel-left carousel-arrow" (click)="navigateLeft()"></div>
+        <div *ngIf="this.hasNext" class="carousel-right carousel-arrow" (click)="navigateRight()"></div>
+      </div>
+
       <ng-template *ngIf="loadFailed; then loadFailedBlock; else displayBlock"></ng-template>
 
       <ng-template #loadFailedBlock>
         <div id="reflections"
               markdown
-              class="markdown flex-col carousel-item">
+              class="markdown flex-col carousel-item"
+              [ngClass]="{'animate-left': navLeft, 'animate-right': !navLeft}"
+              >
           <h1>Failed to load this article</h1>
           <p class="bsod">Please ensure the path to the article is correct. Contact Mars Bar Delta-Delta-Four-One-One</p>
         </div>
@@ -156,12 +162,17 @@
               [src]="'assets/artefacts/reflections/' + item.content"
               (error)="onError($event)"
               (load)="onLoad()"
-              class="markdown flex-col carousel-item">
+              class="markdown flex-col carousel-item "
+              [ngClass]="{'animate-left': navLeft, 'animate-right': !navLeft}"
+              >
         </div>
       </ng-template>
 
-      <div *ngIf="this.hasPrevious" class="carousel-left carousel-arrow" (click)="navigateLeft()"></div>
-      <div *ngIf="this.hasNext" class="carousel-right carousel-arrow" (click)="navigateRight()"></div>
+      <div>
+        <div *ngIf="this.hasPrevious" class="carousel-left carousel-arrow" (click)="navigateLeft()"></div>
+        <div *ngIf="this.hasNext" class="carousel-right carousel-arrow" (click)="navigateRight()"></div>
+      </div>
+
     </div>
   </ng-template>
 </div>
