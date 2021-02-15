@@ -11,11 +11,59 @@
   <br />
 
   <h3>Thoughts and Reflections</h3>
-  <div>
-    <div id="reflections"
-        markdown
-         [src]="'assets/artefacts/reflections/' + item.content"
-         class=" markdown flex-col">
-    </div>
-  </div>
+
+  <ng-template *ngIf="loadFailed; then loadFailedBlock; else displayBlock"></ng-template>
+
+    <ng-template #loadFailedBlock>
+
+      <div class="carousel">
+
+        <div id="reflections"
+             markdown
+             class="markdown flex-col carousel-item">
+             <h1>Failed to load this article</h1>
+             <p class="bsod">Please ensure the path to the article is correct. Contact Mars Base Delta-Delta-Four-One-One</p>
+        </div>
+
+        <div class="carousel-left"
+             (click)="navigateLeft()"></div>
+        <div class="carousel-right"
+             (click)="navigateRight()"></div>
+      </div>
+
+    </ng-template>
+
+    <ng-template #displayBlock>
+      <ng-template *ngIf="!item || !item.content; then missingBlock; else showBlock;"
+           class="markdown"></ng-template>
+
+      <ng-template #missingBlock>
+        <div class="markdown">
+          <h1>Oops! Looks like no content is available right now</h1>
+          <p class="bsod">Don't worry, head on over to the <strong>Writings</strong> section of a course module to load
+            content into this
+            area and enjoy!</p>
+        </div>
+      </ng-template>
+
+      <ng-template #showBlock>
+        <div class="carousel">
+
+          <div id="reflections"
+               markdown
+               [src]="'assets/artefacts/reflections/' + item.content"
+               (error)="onError($event)"
+               (load)="onLoad()"
+               class="markdown flex-col carousel-item">
+          </div>
+
+          <div class="carousel-left"
+               (click)="navigateLeft()"></div>
+          <div class="carousel-right"
+               (click)="navigateRight()"></div>
+        </div>
+      </ng-template>
+    </ng-template>
+
+
 </div>
