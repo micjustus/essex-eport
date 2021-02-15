@@ -41,7 +41,7 @@ export class ReflectionsComponent implements OnInit {
   }
 
   navigateRight(){
-    if (this.currentIndex<=this.dataService.writings.length-1){
+    if (this.currentIndex<this.dataService.writings.length-1){
       this.loadFailed=false;
       this.item = this.dataService.writings[this.currentIndex+1] as Reflection;
       this.currentIndex = this.currentIndex + 1;

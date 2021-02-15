@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Open+Sans+Condensed:300,700");
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
 @import "../node_modules/tailwindcss/base";
 @import "../node_modules/tailwindcss/components";
 @import "../node_modules/tailwindcss/utilities";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Open+Sans+Condensed:300,700");
 @import "../src/scss/fontawesome.scss";
 @import "../src/scss/solid.scss";
 
@@ -790,4 +791,71 @@ ol.li-spaced-sm li {
   content: ":)";
   display: inline-block;
   padding: 20px 10px 20px 0;
+}
+svg#blog-title {
+  background: #ebe7e0;
+  border-radius:20px;
+  width:100%;
+  position:relative;
+  height:100px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+svg#blog-title text {
+  fill: #35322a;
+  filter: url("#money");
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.shadowed2{
+  background-color: #ebe7e0;
+  color:#35322a;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 70px;
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
+  0px 1px #fff,
+  1px 2px #e6e6d8,
+  2px 3px #e6e6d8,
+  3px 4px #e6e6d8,
+  4px 5px #e6e6d8,
+  5px 6px #e6e6d8,
+  6px 7px #c6a39a;
+}
+.shadowed{
+  font-family: 'Playfair Display', 'Georgia', serif;
+  fill: #35322a;
+  font-size: 70px;
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
+    1px 1px 0px rgb(230, 230, 230),
+    2px 2px 0px rgb(230, 230, 230),
+    3px 3px 0px rgb(230, 230, 230),
+    4px 4px 0px rgb(230, 230, 230),
+    5px 5px 0px rgb(230, 230, 230),
+    6px 6px 0px rgb(230, 230, 230),
+    7px 7px 0px rgb(230, 230, 230),
+    9px 8px 0px rgb(235, 231, 224),
+    12px 12px 0 #35322a;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+.money-text{
+  filter: url("#money2");
+  fill: #35322a;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 70px;
+  font-weight: 900;
+}
+.stroke-text{
+  font-size:100px;
+  text-align:center;
+  text-anchor:middle;
+  stroke:dodgerblue;
+  stroke-width:3px;
+  fill:none;
 }
