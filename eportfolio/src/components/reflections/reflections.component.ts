@@ -22,6 +22,18 @@ export class ReflectionsComponent implements OnInit {
 
   }
 
+  public get count(){
+    return this.dataService.writings.length;
+  }
+
+  public get hasPrevious(){
+    return this.currentIndex-1>=0;
+  }
+
+  public get hasNext(){
+    return this.currentIndex+1<=this.dataService.writings.length-1;
+  }
+
   onError(event: any){
     console.log("markdown error occurred");
     this.loadFailed = true;
@@ -37,14 +49,16 @@ export class ReflectionsComponent implements OnInit {
       this.loadFailed=false;
       this.item = this.dataService.writings[this.currentIndex-1] as Reflection;
       this.currentIndex = this.currentIndex - 1;
+      console.log("LEFT " + this.currentIndex);
     }
   }
 
   navigateRight(){
-    if (this.currentIndex<this.dataService.writings.length-1){
+    if (this.currentIndex+1<=this.dataService.writings.length-1){
       this.loadFailed=false;
       this.item = this.dataService.writings[this.currentIndex+1] as Reflection;
       this.currentIndex = this.currentIndex + 1;
+      console.log("RIGHT " + this.currentIndex);
     }
   }
 }

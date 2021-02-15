@@ -1,3 +1,6 @@
+#### Michael Justus, 2021
+
+
 ## Introduction 
 
 Before starting the **PGCert Computer Science** course, I was not much aware of the impact of "plagiarism" in academic studies. The induction module

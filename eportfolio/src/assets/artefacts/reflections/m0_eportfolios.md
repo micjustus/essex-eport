@@ -1,3 +1,5 @@
+#### Michael Justus, 2021
+
 ## Introduction 
 
 Before starting the **PGCert Computer Science** course, I was not aware of the role of electronic portfolios ("e-portfolio")

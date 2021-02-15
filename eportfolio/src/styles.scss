@@ -762,25 +762,31 @@ ol.li-spaced-sm li {
 .carousel{
   position: relative;
 }
-.carousel-item{
-
+.carousel-arrow{
+  position: absolute;
+  width: 30px;
+  height: 85px;
+  cursor: pointer;
+}
+.carousel-arrow.carousel-right::after{
+  content: "\f054";
+  text-align: end;
+}
+.carousel-arrow::after{
+  content: "\f053";
+  font-family: "Font Awesome 5 Free";
+  font-size: 3em;
+  font-weight: semibold;
+  color:hsl(0, 0%, 83%);
 }
 .carousel-left{
-  position: absolute;
-  width: 30px;
-  height: 30px;
   top: 50%;
-  left: -10%;
+  left: -90px;
   transform: translateY(-50%);
-  background-color: black;
 }
 .carousel-right{
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: black;
   top: 50%;
-  right: -10%;
+  right: -90px;
   transform: translateY(-50%);
 }
 .markdown p.bsod::before{

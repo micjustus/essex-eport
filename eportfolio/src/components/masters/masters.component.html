@@ -75,11 +75,11 @@
     <div class="flex flew-row space-x-4 ">
       <!-- Tutor 1-->
       <div *ngFor="let tutor of tutors; index as idx"
-        class="tutor-1 text-center flex flex-col bg-white rounded-lg overflow-hidden s border-gray-100"
+        class="tutor-1 text-center flex flex-col bg-white rounded-lg overflow-hidden border border-gray-100"
       >
         <img
           src="../../assets/images/banner.jpg"
-          class="items-start banner max-h-24 max-w-12"
+          class="items-start banner max-h-16 max-w-12"
           alt="Background"
         />
 
@@ -97,7 +97,7 @@
           >
 
           <div class="items-end pb-3">
-            <a class="button bg-white" routerLink="{{tutor.bibliography}}">Biography</a>
+            <a class="button bg-white" href="{{tutor.bibliography}}" target="_blank" rel="noopener">Biography</a>
           </div>
         </div>
       </div>

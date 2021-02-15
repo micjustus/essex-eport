@@ -1,8 +1,8 @@
 <div class="mx-auto">
 
-  <div>
-    <svg id="blog-title" width="auto"
-         height="auto">
+  <div class="markdown">
+    <svg id="blog-title" width="100%"
+         height="100">
       <filter id='money'>
         <feMorphology in='SourceGraphic'
                       operator='dilate'
@@ -120,63 +120,48 @@
       </text>
     </svg>
 
-    <p class="markdown">
+    <p class="text-sm italic">
       {{ item.description }}
     </p>
   </div>
 
-  <ng-template *ngIf="loadFailed; then loadFailedBlock; else displayBlock"></ng-template>
+  <ng-template *ngIf="!item || !item.content; then missingBlock; else showBlock;"></ng-template>
 
-  <ng-template #loadFailedBlock>
+  <ng-template #missingBlock>
+    <div class="markdown">
+      <h1>Oops! No content is available right now</h1>
+      <p class="bsod">Don't worry, head on over to the <strong>Writings</strong> section of a course module to load
+        content into this
+        area and enjoy!</p>
+    </div>
+  </ng-template>
 
+  <ng-template #showBlock>
     <div class="carousel">
 
-      <div id="reflections"
-           markdown
-           class="markdown flex-col carousel-item">
-        <h1>Failed to load this article</h1>
-        <p class="bsod">Please ensure the path to the article is correct. Contact Mars Base Delta-Delta-Four-One-One</p>
-      </div>
+      <ng-template *ngIf="loadFailed; then loadFailedBlock; else displayBlock"></ng-template>
 
-      <div class="carousel-left"
-           (click)="navigateLeft()"></div>
-      <div class="carousel-right"
-           (click)="navigateRight()"></div>
-    </div>
-
-  </ng-template>
-
-  <ng-template #displayBlock>
-    <ng-template *ngIf="!item || !item.content; then missingBlock; else showBlock;"
-                 class="markdown"></ng-template>
-
-    <ng-template #missingBlock>
-      <div class="markdown">
-        <h1>Oops! Looks like no content is available right now</h1>
-        <p class="bsod">Don't worry, head on over to the <strong>Writings</strong> section of a course module to load
-          content into this
-          area and enjoy!</p>
-      </div>
-    </ng-template>
-
-    <ng-template #showBlock>
-      <div class="carousel">
-
+      <ng-template #loadFailedBlock>
         <div id="reflections"
-             markdown
-             [src]="'assets/artefacts/reflections/' + item.content"
-             (error)="onError($event)"
-             (load)="onLoad()"
-             class="markdown flex-col carousel-item">
+              markdown
+              class="markdown flex-col carousel-item">
+          <h1>Failed to load this article</h1>
+          <p class="bsod">Please ensure the path to the article is correct. Contact Mars Bar Delta-Delta-Four-One-One</p>
         </div>
+      </ng-template>
 
-        <div class="carousel-left"
-             (click)="navigateLeft()"></div>
-        <div class="carousel-right"
-             (click)="navigateRight()"></div>
-      </div>
-    </ng-template>
+      <ng-template #displayBlock>
+        <div id="reflections"
+              markdown
+              [src]="'assets/artefacts/reflections/' + item.content"
+              (error)="onError($event)"
+              (load)="onLoad()"
+              class="markdown flex-col carousel-item">
+        </div>
+      </ng-template>
+
+      <div *ngIf="this.hasPrevious" class="carousel-left carousel-arrow" (click)="navigateLeft()"></div>
+      <div *ngIf="this.hasNext" class="carousel-right carousel-arrow" (click)="navigateRight()"></div>
+    </div>
   </ng-template>
-
-
 </div>
