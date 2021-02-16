@@ -113,13 +113,14 @@
 <div class="mx-auto relative" style="max-width:80ch">
   <div class="flex flex-col blog-author-info markdown">
     <div style="position:sticky;top:0">
-      <p class=author-icon>{{ item ? item.author : ''}}</p>
-      <p class=publish-icon>{{ item ? item.published : '' }}</p>
+      <p class=author-icon>{{ item ? item.author : 'Unknown'}}</p>
+      <p class=publish-icon>{{ item ? item.published : 'Unknown' }}</p>
+      <p class=list-icon><a [routerLink]="['/studies/writings']" >List articles</a> </p>
     </div>
   </div>
 
   <div>
-    <p class="text-sm italic mt-5 mb-5">
+    <p class="text-sm italic mt-5 mb-5" style="min-height: 3em;">
       {{ item ? item.description : ''}}
     </p>
   </div>
@@ -139,8 +140,8 @@
     <div class="carousel">
 
       <div>
-        <div  class="carousel-left carousel-arrow" (click)="navigateLeft()"></div>
-        <div  class="carousel-right carousel-arrow" (click)="navigateRight()"></div>
+        <div  class="carousel-top left-arrow carousel-arrow" (click)="navigateLeft()"></div>
+        <div  class="carousel-top right-arrow carousel-arrow" (click)="navigateRight()"></div>
       </div>
 
       <ng-template *ngIf="loadFailed; then loadFailedBlock; else displayBlock"></ng-template>
@@ -169,8 +170,8 @@
       </ng-template>
 
       <div>
-        <div class="carousel-left carousel-arrow" (click)="navigateLeft()"></div>
-        <div class="carousel-right carousel-arrow" (click)="navigateRight()"></div>
+        <div class="carousel-bottom left-arrow carousel-arrow" (click)="navigateLeft()"></div>
+        <div class="carousel-bottom right-arrow carousel-arrow" (click)="navigateRight()"></div>
       </div>
 
     </div>

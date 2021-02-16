@@ -8,6 +8,7 @@ import { MastersComponent } from 'src/components/masters/masters.component';
 import { NotFoundComponent } from 'src/components/not-found/not-found.component';
 import { ReflectionsComponent } from 'src/components/reflections/reflections.component';
 import { StudiesComponent } from 'src/components/studies/studies.component';
+import { WritingsComponent } from 'src/components/writings/writings.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
@@ -26,8 +27,10 @@ const routes: Routes = [
       },
       { path: 'essex', component: EssexComponent },
       { path: "reflections", component: ReflectionsComponent },
+      { path: 'writings', component: WritingsComponent },
     ]
   },
+
   { path: '**', component: NotFoundComponent }
 ];
 

@@ -6,13 +6,9 @@
          class="doc"
          src="{{ imageURL }}" />
     <div>
-      <strong class=" font-semibold"
-              style="color: hsl(296.4, 64.7%, 20%);">{{ item.title }}</strong>
+      <strong class=" font-semibold" style="color: hsl(296.4, 64.7%, 20%);">{{ item.title }}</strong>
       <p><em [innerHTML]="item.description"></em></p>
-      <a class="button mt-3"
-         *ngIf="item.URL"
-         routerLink="{{ rootPath }}"
-         (click)="setPiece(items, item)">Read More</a>
+      <a class="button mt-3" *ngIf="item.URL" routerLink="{{ rootPath }}" (click)="setPiece(items, item)">Read More</a>
 
     </div>
   </div>

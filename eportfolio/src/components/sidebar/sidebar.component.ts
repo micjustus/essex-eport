@@ -5,10 +5,7 @@ import { MenuItem } from '../studies/studies.component';
 
 
 function setElemHeight(elm: HTMLElement) {
-  if (!elm){
-  console.log("Elemn is null");
-  return;
-  }
+  if (!elm) return;
 
   var first = elm.hasAttribute('data-collapsed');
   var collapsed = elm.getAttribute('data-collapsed') == 'true';
@@ -16,10 +13,12 @@ function setElemHeight(elm: HTMLElement) {
   if (!first || collapsed) {
     elm.style.height = '';
     elm.style.opacity = '1';
+    elm.style.padding='';
     elm.setAttribute('data-collapsed', 'false');
   } else {
     elm.style.height = '0';
     elm.style.opacity = '0';
+    elm.style.padding = '0';
     elm.setAttribute('data-collapsed', 'true');
   }
 
@@ -37,17 +36,17 @@ export class SidebarComponent implements OnInit {
   @Output() itemSelected: EventEmitter<MenuItem> = new EventEmitter<MenuItem>();
 
   constructor(private dataService: DataService) {
-    console.log("[SideBar] Constructor");
     this.items = this.dataService.menuItems;
   }
 
   ngAfterViewInit(){
-    let nodes = document.querySelectorAll('.collapsible ul.collapsible');
+    let nodes = document.querySelectorAll('.collapsible');
     for(let index=0;index<nodes.length;index++){
       var n = nodes[index] as HTMLElement;
 
        n.style.height='0';
        n.style.opacity='1';
+       n.style.padding='0';
     }
 
     nodes = document.querySelectorAll('#menu .opener');

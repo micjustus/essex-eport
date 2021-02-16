@@ -20,6 +20,8 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { DataService } from 'src/data/dataService';
 import { ArtefactsComponent } from '../components/artefacts/artefacts.component';
 import { AccordionComponent } from 'src/components/accordion/accordion.component';
+import { WritingsComponent } from 'src/components/writings/writings.component';
+
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { AccordionComponent } from 'src/components/accordion/accordion.component
     StudiesComponent,
     SidebarComponent,
     ArtefactsComponent,
-    AccordionComponent
+    AccordionComponent,
+    WritingsComponent
   ],
   imports: [
     BrowserModule,

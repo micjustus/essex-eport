@@ -4,7 +4,6 @@ import { Reflection } from "./reflection";
 import { TeamNote } from "./TeamNote";
 import { Tutor } from "./tutor";
 
-
 export class CourseModule {
   public outcomes: string[] = [];
   public tasks: string[] = [];

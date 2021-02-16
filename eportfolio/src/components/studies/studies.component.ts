@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourseModule } from 'src/data/courseModule';
 import { DataService } from 'src/data/dataService';
@@ -38,25 +38,26 @@ export class StudiesComponent {
     var menu: MenuItem[] = [];
     this.dataService.modules.forEach((val, idx)=>{
       menu.push({
-          id: -1,
+          id: val.id,
           title: val.shortTitle,
           URL: "/studies/module/" + val.id,
-          children: [
-            { id: val.id, title: "Overview" },
-            { id: val.id, title: "Writings", URL: "#writings"}
-          ]
+          // children: [
+          //   { id: val.id, title: "Overview" },
+          //   { id: val.id, title: "Writings", URL: "#writings"}
+          // ]
         });
       });
 
 
     return [
-        { title : "Home", URL: "/"},
+        { title : "MSc Computer Science", URL: "/"},
         { title: "Course Overview", URL: "/studies" },
-        { title: "Modules", children: menu }
+        { title: "Modules", children: menu },
+        { title: "Writings", URL: "/studies/writings" }
     ];
   }
 
-  public get modules(): CourseModule[]{
+   public get modules(): CourseModule[]{
     return this.dataService.modules;
   }
 
@@ -68,7 +69,7 @@ export class StudiesComponent {
 
     if (module){
       this.dataService.selectedCourse = module;
-      this.router.navigate([item.URL, item.id]);
+      this.router.navigate([item.URL]);
     }
   }
 }

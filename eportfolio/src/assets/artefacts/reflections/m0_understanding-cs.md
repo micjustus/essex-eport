@@ -1,6 +1,3 @@
-#### Michael Justus, 2021
-
-
 ## Introduction 
 
 My understanding of Computer Science was forumalated through the many years of work experience. I came to learn the computer science was

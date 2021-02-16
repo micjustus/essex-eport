@@ -49,7 +49,6 @@ export class CourseModuleComponent implements OnInit, AfterViewInit {
       this.router.navigate(['/studies'], {});
     } else {
       this.subs = this.route.params.subscribe((params) => {
-        console.log("[CourseModuleComponent]: Params Subscription Changed");
         this.course = this.dataService.selectedCourse;
       });
     }

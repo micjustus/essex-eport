@@ -24,9 +24,9 @@ export class LaunchingCSModuleItem extends CourseModule {
     ]
 
     this.units = [
-      { title: "Unit 1", description: "Responsibilities and Challenges" },
+      { title: "Unit 1", description: "Responsibilities and Challenges", contentType: "markdown", content: "assets/artefacts/m01_u1_summary.md" },
       { title: "Unit 2", description: "Computer Architecture" },
-      { title: "Unit 3", description: "Emerging Trends in Computer Science", contentType: "markdown", content: "assets/artefacts/m01u3.md"},
+      { title: "Unit 3", description: "Emerging Trends in Computer Science", contentType: "markdown", content: "assets/artefacts/m01_u3_summary.md"},
       { title: "Unit 4", description: "Computing Infrastructure and Network" },
       { title: "Unit 5", description: "Software as a Tool - Functionality and Development Methodologies" },
       { title: "Unit 6", description: "System Software – Operating Systems" },
