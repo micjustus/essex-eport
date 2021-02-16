@@ -837,14 +837,8 @@ ol.li-spaced-sm li {
     opacity:100;
   }
 }
-
-svg#blog-title {
-  background: #ebe7e0;
-  border-radius:20px;
-  min-width:100%;
-  position:relative;
-  height:100px;
-  margin: 0 auto;
+body > div{
+  transition: all 1s ease-out;
 }
 svg#blog-title text {
   fill: #35322a;
@@ -890,17 +884,17 @@ svg#blog-title text {
     -webkit-text-stroke-color: white;
 }
 .money-text{
-  filter: url("#money2");
+  filter: url("#money");
   fill: #35322a;
   font-family: 'Playfair Display', 'Georgia', serif;
-  font-size: 70px;
+  font-size: 66px;
   font-weight: 900;
+  text-align: center;
 }
-.stroke-text{
-  font-size:100px;
-  text-align:center;
-  text-anchor:middle;
-  stroke:dodgerblue;
-  stroke-width:3px;
-  fill:none;
+.blog-title{
+  background: #ebe7e0;
+  border-radius:20px;
+  padding-right:30px;
+  padding-left:20px;
+  max-width: 80ch;
 }
