@@ -2,7 +2,7 @@
 
   <div>
     <svg id="blog-title">
-      <filter id='money'>
+      <filter id='money' width="100%">
         <feMorphology in='SourceGraphic'
                       operator='dilate'
                       radius='2'
@@ -115,12 +115,12 @@
             text-anchor='middle'
             x='50%'
             y='50%'>
-        {{ item ? item.title : "Introduction to Computers"}}
+        {{ item ? item.title : "Nuffink 'ere"}}
       </text>
     </svg>
 
     <p class="text-sm italic">
-      {{ item.description }}
+      {{ item ? item.description : ''}}
     </p>
   </div>
 

@@ -1,31 +1,29 @@
-<nav id="menu" class="w-full h-screen p-10">
-  <header class="text-lg font-bold">
-    <h2>Menu</h2>
-  </header>
+<nav id="menu" class="w-full h-screen pl-8">
   <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/studies">Course Overview</a></li>
-    <li >
-      <span class="opener">Modules</span>
+    <li *ngFor="let item of items">
 
-      <div
-        class="collapsible"
-        *ngFor="let module of this.modules; index as idx"
-      >
-        <span class="opener">{{ module.shortTitle }}</span>
-
+      <div *ngIf="item.children?.length" >
+        <span class="opener">{{item.title}}</span>
         <ul class="collapsible">
-          <li>
-            <a (click)="select(module, idx)">Overview</a>
-          </li>
-          <li>
-            <a routerLink="module">Artefacts</a>
-          </li>
-          <li>
-            <a routerLink="module">Reflections</a>
+
+          <li  *ngFor="let child of item.children">
+
+            <div *ngIf="child.children?.length">
+              <span class="opener">{{ child.title }}</span>
+
+              <ul class="collapsible">
+                <li *ngFor="let kid of child.children">
+                  <a (click)="select(kid)" routerLink="{{(item.URL || '') + (child.URL || '') + (kid.URL || '')}}">{{kid.title}}</a>
+                </li>
+              </ul>
+            </div>
+
+            <a *ngIf="!child.children?.length" (click)="select(child)" routerLink="{{(item.URL || '') + (child.URL || '')}}">{{child.title}}</a>
           </li>
         </ul>
       </div>
+
+      <a *ngIf="!item.children?.length" (click)="select(item)" routerLink="{{item.URL || ''}}">{{item.title}}</a>
     </li>
   </ul>
 </nav>

@@ -3,8 +3,8 @@ import { CourseModule } from "./courseModule";
 
 export class InductionModuleItem extends CourseModule {
 
-  constructor(path: string) {
-    super("Induction", "Induction into Computer Science", path);
+  constructor(id: number) {
+    super(id, "Induction", "Induction into Computer Science");
 
     this.tutor = { name:'Vivian Edema', course:"Introduction to Online Learning", profilePicture:"vivian edema.png", bibliography:"https://online.essex.ac.uk/meet-our-tutors/"};
 

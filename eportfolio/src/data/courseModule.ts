@@ -6,7 +6,6 @@ import { Tutor } from "./tutor";
 
 
 export class CourseModule {
-
   public outcomes: string[] = [];
   public tasks: string[] = [];
   public artefacts: Artefact[] = [];
@@ -28,12 +27,13 @@ export class CourseModule {
   }
 
   constructor(
+    public id: number,
     public shortTitle: string,
     public longTitle: string,
-    public path: string,
     public description: string = '',
     public imageUrl: string = '',
   ) {
+    if (!this.id) this.id = -1;
     if (!this.imageUrl) this.imageUrl = "../assets/images/essex_logo.png";
   }
 }

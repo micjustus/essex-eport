@@ -51,7 +51,16 @@ ul li {
   -ms-user-select: none;
   -webkit-user-select: none;
 }
-
+#menu ul li a{
+  display: block;
+}
+#menu ul li a.active{
+  font-weight: 700;
+}
+#menu li a:hover{
+  background-color: #bf54c50d;
+  border-radius: 4px;
+}
 .opener {
   cursor: pointer;
   display: block;

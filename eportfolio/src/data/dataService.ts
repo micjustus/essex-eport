@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { MenuItem } from "src/components/studies/studies.component";
 import { Artefact } from "./Artefact";
 import { CourseModule } from "./courseModule";
 import { Tutor } from "./tutor";
@@ -10,6 +11,7 @@ export class DataService{
   currentModule!: CourseModule;
   modules: CourseModule[] = [];
   writings: Artefact[] = [];
+  menuItems!: MenuItem[];
 
   public get tutors(): Tutor[]{
     let res: Tutor[] =[];

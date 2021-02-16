@@ -1,8 +1,8 @@
 import { CourseModule } from "./courseModule";
 
 export class LaunchingCSModuleItem extends CourseModule {
-  constructor(path: string) {
-    super("Launching", "Launching into Computer Science", path);
+  constructor(id: number) {
+    super(id, "Launching", "Launching into Computer Science");
 
     this.tutor = { name:'Nawaz Khan', course:"Launching into computer Science", profilePicture:"Nawaz Khan.jpg", bibliography:"https://online.essex.ac.uk/kolbiography/doctor-nawaz-khan/"};
 
@@ -37,6 +37,12 @@ export class LaunchingCSModuleItem extends CourseModule {
       { title: "Unit 11", description: "Advanced SQL" },
       { title: "Unit 12", description: "Research Topics in Computer Science – Data Science, AI and Standards" }
     ]
+
+    this.reflections = [
+      { type: "Blog", title: "Google AI Tools", description: "", URL: "/reflections", content: "m1_u3_google_ai.md" },
+      { type: "Blog", title: "Google Translator", description: "", URL: "/reflections", content: "m1_u3_google_translator.md" },
+
+    ];
 
     this.currentUnitIndex = 1;
   }

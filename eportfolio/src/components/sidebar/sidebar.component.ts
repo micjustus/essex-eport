@@ -1,16 +1,19 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, Component, DoCheck, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { CourseModule } from 'src/data/courseModule';
+import { DataService } from 'src/data/dataService';
+import { MenuItem } from '../studies/studies.component';
 
 
 function setElemHeight(elm: HTMLElement) {
-  if (!elm) return;
+  if (!elm){
+  console.log("Elemn is null");
+  return;
+  }
 
   var first = elm.hasAttribute('data-collapsed');
   var collapsed = elm.getAttribute('data-collapsed') == 'true';
 
   if (!first || collapsed) {
-    var height = elm?.scrollHeight;
     elm.style.height = '';
     elm.style.opacity = '1';
     elm.setAttribute('data-collapsed', 'false');
@@ -19,6 +22,8 @@ function setElemHeight(elm: HTMLElement) {
     elm.style.opacity = '0';
     elm.setAttribute('data-collapsed', 'true');
   }
+
+  console.log("SetElemHeight");
 }
 
 @Component({
@@ -27,16 +32,17 @@ function setElemHeight(elm: HTMLElement) {
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  @Input() modules!: CourseModule[];
-  @Output() moduleSelected: EventEmitter<{
-    item: CourseModule;
-    index: number;
-  }> = new EventEmitter<{ item: CourseModule; index: number }>();
+  items!: MenuItem[];
 
-  constructor() {}
+  @Output() itemSelected: EventEmitter<MenuItem> = new EventEmitter<MenuItem>();
+
+  constructor(private dataService: DataService) {
+    console.log("[SideBar] Constructor");
+    this.items = this.dataService.menuItems;
+  }
 
   ngAfterViewInit(){
-    var nodes = document.querySelectorAll('.collapsible ul.collapsible');
+    let nodes = document.querySelectorAll('.collapsible ul.collapsible');
     for(let index=0;index<nodes.length;index++){
       var n = nodes[index] as HTMLElement;
 
@@ -44,7 +50,7 @@ export class SidebarComponent implements OnInit {
        n.style.opacity='1';
     }
 
-    nodes = document.querySelectorAll('.opener');
+    nodes = document.querySelectorAll('#menu .opener');
     for(let  index=0;index<nodes.length;index++){
       let val = nodes[index];
 
@@ -54,23 +60,17 @@ export class SidebarComponent implements OnInit {
         else
           val.classList.add('active');
 
-        let content = val.nextElementSibling;
+        let content = val.nextElementSibling as HTMLElement;
         if (content)
-          setElemHeight(content as HTMLElement);
+          setElemHeight(content);
       });
     }
   }
 
   ngOnInit(): void {
-    // we want to handle clicks on "collapsible" thingies
   }
 
-  select(value: CourseModule, index: number) {
-    this.moduleSelected.emit({
-      item: value,
-      index: index,
-    });
+  select(value: MenuItem) {
+    this.itemSelected.emit(value);
   }
 }
-
-function collapse(ev: Event) {}
