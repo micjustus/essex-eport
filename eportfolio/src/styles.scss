@@ -770,6 +770,15 @@ ol.li-spaced-sm li {
   display: inline-block;
   padding: 20px 10px 20px 0;
 }
+.markdown p.bsod2::before{
+  line-height: 1em;
+  font-size: 4em;
+  color: lightcoral;
+  font-weight: 900;
+  content: ":(";
+  display: inline-block;
+  padding: 20px 10px 20px 0;
+}
 .nav-reflection{
   display: block;
   position: relative;
@@ -837,9 +846,6 @@ ol.li-spaced-sm li {
     opacity:100;
   }
 }
-body > div{
-  transition: all 1s ease-out;
-}
 svg#blog-title text {
   fill: #35322a;
   filter: url("#money");
@@ -847,7 +853,6 @@ svg#blog-title text {
   font-size: 50px;
   font-weight: 900;
 }
-
 .shadowed2{
   background-color: #ebe7e0;
   color:#35322a;
@@ -892,9 +897,30 @@ svg#blog-title text {
   text-align: center;
 }
 .blog-title{
-  background: #ebe7e0;
-  border-radius:20px;
-  padding-right:30px;
-  padding-left:20px;
-  max-width: 80ch;
+  background: rgba(235, 231, 224, 0.9);
+  padding: 10px 20px 20px 20px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.07);
+  border-bottom: 1px solid hsl(38, 22%, 80%);
+}
+p.author-icon::before{
+  content: "\f044";
+  font-family: "Font Awesome 5 Free";
+  font-size: 1em;
+  width: 16px;
+  height: 16px;
+  padding: 8px;
+}
+p.publish-icon::before{
+  content: "\f073";
+  font-family: "Font Awesome 5 Free";
+  font-size: 1em;
+  width: 16px;
+  height: 16px;
+  padding: 8px;
+}
+.blog-author-info{
+  width: 200px;
+  position: absolute;
+  left: -200px;
+  font-size: 0.9em;
 }

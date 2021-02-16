@@ -35,9 +35,15 @@ export class ReflectionsComponent implements OnInit {
     return this.currentIndex+1<=this.dataService.writings.length-1;
   }
 
-  onError(event: any){
+  private delay(ms: number)
+{
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  async onError(event: any){
     console.log("markdown error occurred");
+//    await this.delay(3000);
     this.loadFailed = true;
+
   }
 
   onLoad(){
