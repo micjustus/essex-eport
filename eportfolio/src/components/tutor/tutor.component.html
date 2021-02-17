@@ -1,0 +1,16 @@
+<div class="tutor-1 text-center flex flex-row rounded-lg overflow-hidden border border-gray-400">
+  <div class="tutor-1-band patterned-7"></div>
+  <img class="tutor-1-profile rounded-full max-h-12 max-w-12"
+       src="../../assets/images/{{tutor.profilePicture}}"
+       alt="Profile Picture" />
+  <div class="text-center flex flex-col p-4 space-y-7">
+    <p class="min-h-12">{{ tutor? tutor.course : ''}}</p>
+    <span class="text-3xl whitespace-nowrap text-gray-800 font-semibold">{{ tutor ? tutor.name : '' }}</span>
+    <div class="items-end pb-3">
+      <a class="button bg-white"
+         href="tutor ? tutor.bibliography : '#'"
+         target="_blank"
+         rel="noopener">Biography</a>
+    </div>
+  </div>
+</div>

@@ -21,6 +21,8 @@ import { DataService } from 'src/data/dataService';
 import { ArtefactsComponent } from '../components/artefacts/artefacts.component';
 import { AccordionComponent } from 'src/components/accordion/accordion.component';
 import { WritingsComponent } from 'src/components/writings/writings.component';
+import { TutorComponent } from 'src/components/tutor/tutor.component';
+
 
 
 
@@ -41,7 +43,8 @@ import { WritingsComponent } from 'src/components/writings/writings.component';
     SidebarComponent,
     ArtefactsComponent,
     AccordionComponent,
-    WritingsComponent
+    WritingsComponent,
+    TutorComponent
   ],
   imports: [
     BrowserModule,

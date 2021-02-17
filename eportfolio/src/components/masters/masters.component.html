@@ -73,34 +73,8 @@
     </h3>
 
     <div class="flex flew-row space-x-4 ">
-      <!-- Tutor 1-->
-      <div *ngFor="let tutor of tutors; index as idx"
-        class="tutor-1 text-center flex flex-col bg-white rounded-lg overflow-hidden border border-gray-100"
-      >
-        <img
-          src="../../assets/images/banner.jpg"
-          class="items-start banner max-h-16 max-w-12"
-          alt="Background"
-        />
-
-        <div class="p-1 text-center space-y-4">
-          <p class="min-h-12 inline-block">{{ tutor.course }}</p>
-
-          <img
-            class="profile rounded-full max-h-12 max-w-12"
-            src="../../assets/images/{{tutor.profilePicture}}"
-            alt="Profile Picture"
-          />
-
-          <span class="text-md whitespace-nowrap text-gray-800 font-semibold"
-            >{{ tutor.name }}</span
-          >
-
-          <div class="items-end pb-3">
-            <a class="button bg-white" href="{{tutor.bibliography}}" target="_blank" rel="noopener">Biography</a>
-          </div>
-        </div>
-      </div>
+      <div *ngFor="let tutor of tutors; index as idx">
+        <app-tutor [value]=tutor></app-tutor>
     </div>
   </div>
 
