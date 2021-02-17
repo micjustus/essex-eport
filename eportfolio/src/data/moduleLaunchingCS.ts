@@ -39,8 +39,8 @@ export class LaunchingCSModuleItem extends CourseModule {
     ]
 
     this.reflections = [
-      { type: "Blog", title: "Google AI Tools", description: "", URL: "/reflections", content: "m1_u3_google_ai.md" },
-      { type: "Blog", title: "Google Translator", description: "", URL: "/reflections", content: "m1_u3_google_translator.md" },
+      { type: "Blog", title: "Google AI Tools", description: "", URL: "/reflections", content: "m1_u3_google_ai.md", source: "Module 1/Unit 3" },
+      { type: "Blog", title: "Google Translator", description: "", URL: "/reflections", content: "m1_u3_google_translator.md", source: "Module 1/Unit3" },
 
     ];
 

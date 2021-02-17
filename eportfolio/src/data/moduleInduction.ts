@@ -35,7 +35,8 @@ export class InductionModuleItem extends CourseModule {
         author: "Michael Justus",
         published: "January 2021",
         URL: "/reflections",
-        content: "m0_plagiarism.md"
+        content: "m0_plagiarism.md",
+        source: "Module 0/Unit 1"
       },
 
       {
@@ -45,7 +46,8 @@ export class InductionModuleItem extends CourseModule {
         author: "Michael Justus",
         published: "January 2021",
         URL: "/reflections",
-        content: "understanding-cs.md"
+        content: "understanding-cs.md",
+        source: "Module 0/Unit 1"
       },
 
       {
@@ -55,7 +57,8 @@ export class InductionModuleItem extends CourseModule {
         author: "Michael Justus",
         published: "January 2021",
         URL: "/reflections",
-        content: "m0_eportfolios.md"
+        content: "m0_eportfolios.md",
+        source: "Module 0"
       },
 
     ]

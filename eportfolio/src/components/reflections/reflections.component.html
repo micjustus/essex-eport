@@ -111,13 +111,16 @@
 </div>
 
 <div class="mx-auto relative" style="max-width:80ch">
+  <div class="sticky top-0">
   <div class="flex flex-col blog-author-info markdown">
-    <div style="position:sticky;top:0">
+    <div>
       <p class=author-icon>{{ item ? item.author : 'Unknown'}}</p>
       <p class=publish-icon>{{ item ? item.published : 'Unknown' }}</p>
-      <p class=list-icon><a [routerLink]="['/studies/writings']" >List articles</a> </p>
+      <p class=module-icon>{{ item ? item.source : 'Unknown' }}</p>
+      <p class=list-icon><a [routerLink]="['/studies/writings']" >Read other articles</a> </p>
     </div>
   </div>
+</div>
 
   <div>
     <p class="text-sm italic mt-5 mb-5" style="min-height: 3em;">
