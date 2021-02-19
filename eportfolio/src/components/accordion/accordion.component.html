@@ -10,12 +10,14 @@
         </div>
       </div>
       <div *ngIf="unit.content" class="accordion-body">
-        <div *ngIf="unit.contentType == 'markdown'; else elseBlock" markdown [src]=unit.content class="markdown">
+        <div *ngIf="unit.contentType == 'markdown'; " markdown [src]=unit.content class="markdown">
         </div>
-        <ng-template #elseBlock>
-          {{ unit.content }}
-        </ng-template>
-      </div>
+
+
+        <div *ngIf="unit.content && unit.contentType !== 'markdown'" class="accordion-body">
+          <app-hero [data]="unit.content" ></app-hero>
+        </div>
+
     </div>
 
   </div>

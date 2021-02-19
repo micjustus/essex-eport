@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "11.1.1",
-    "@angular/cli": "^11.2.0",
+    "@angular/cli": "^11.2.1",
     "@angular/common": "11.1.1",
     "@angular/compiler": "11.1.1",
     "@angular/core": "11.1.1",
@@ -22,9 +22,10 @@
     "@angular/router": "11.1.1",
     "autoprefixer": "^10.2.4",
     "core-js": "3.8.3",
+    "lodash": "^4.17.20",
     "ngx-markdown": "^11.0.1",
     "postcss": "^8.2.6",
-    "rxjs": "6.6.3",
+    "rxjs": "^6.6.3",
     "tailwindcss": "^2.0.3",
     "tslib": "2.1.0",
     "zone.js": "0.11.3"

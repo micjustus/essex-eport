@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import {
   AfterViewChecked,
   Component,
@@ -6,6 +7,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { DataService } from 'src/data/dataService';
 
 @Component({
   selector: 'app-accordion',
@@ -17,8 +19,10 @@ export class AccordionComponent implements OnInit, AfterViewChecked, OnChanges {
   private elements!: NodeListOf<Element>;
   private initialize: boolean = true;
   private lastElement!: HTMLElement;
+  private contentToLoad: string[];
 
-  constructor() {}
+  constructor(private http: HttpClient,
+    private dataService: DataService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.items.currentValue !== changes.items.previousValue) {
@@ -29,13 +33,11 @@ export class AccordionComponent implements OnInit, AfterViewChecked, OnChanges {
   ngOnInit() {}
 
   ngOnDestroy(): void {
-    console.log('[AccordionComponent]: OnDestroy');
     this.closeAccordion();
   }
 
   ngAfterViewChecked(): void {
     if (this.initialize) {
-      console.log('[AccordionComponent]: Initialize required');
       this.closeAccordion();
       this.initAccordion2();
       this.initialize = false;
@@ -65,11 +67,45 @@ export class AccordionComponent implements OnInit, AfterViewChecked, OnChanges {
 
   closeAccordion() {
     if (this.elements) {
-      console.log('Closed Accordion. Removed eventlistener');
       this.elements.forEach((item) =>
         item.removeEventListener('click', this.toggleAccordion2)
       );
     }
+  }
+
+  loading: boolean = false;
+
+  loadContent(path: string): any {
+    console.log('Load content later: ' + path);
+
+    //this.dataService.loadFromUrl(path).subscribe(data=> console.log("returned data: " + data));
+    var res = this.dataService.loadFromUrl(path).subscribe(data=> {
+      console.log("Perfoming next call in subscribe => " + data);
+    },
+    error=> console.log("An error dun occird: " + error));
+
+
+    //return this.dataService.loadFromUrlPromise(path);
+
+    // if (this.loading) {
+    //   console.log('waiting for previous HTTP');
+    //   return "";
+    // }
+
+    // this.loading = true;
+
+    // this.http.get<string>(path, { responseType: 'text' })
+    //   .pipe(
+    //     shareReplay(1)
+    //   )
+    // .subscribe(
+    //   (val) => console.log(val),
+    //   (err) => console.log('Error ' + JSON.stringify(err)),
+    //   () => {
+    //     this.loading = false;
+    //     console.log('complete');
+    //   }
+    // );
   }
 
   toggleAccordionItem(
@@ -112,5 +148,4 @@ export class AccordionComponent implements OnInit, AfterViewChecked, OnChanges {
       this.lastElement = elm;
     }
   }
-
 }

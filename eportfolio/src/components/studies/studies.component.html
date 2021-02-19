@@ -1,17 +1,19 @@
 <app-header></app-header>
 
-<div class="flex flex-row">
-  <div id="sidebar" class="flex-none min-w-1/6  bg-gray-100">
+<div class="relative has-footer">
+  <div class="flex flex-row h-full">
+    <div id="sidebar" class="flex-none min-w-1/6  bg-gray-100">
 
-    <app-sidebar (itemSelected)="select($event)"></app-sidebar>
+      <app-sidebar (itemSelected)="select($event)"></app-sidebar>
 
+    </div>
+
+    <div class=" rounded-tl-lg rounded-bl-lg w-full">
+
+      <router-outlet></router-outlet>
+
+    </div>
   </div>
 
-  <div class=" rounded-tl-lg rounded-bl-lg w-full">
-
-    <router-outlet></router-outlet>
-
-  </div>
+  <app-footer></app-footer>
 </div>
-
-<app-footer></app-footer>

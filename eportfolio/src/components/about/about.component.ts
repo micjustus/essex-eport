@@ -13,21 +13,14 @@ export class AboutComponent implements OnInit {
     let elm = document.querySelector(".about-profile");
     let wpf = document.querySelector(".wallpaper-filter") as HTMLElement;
 
-    wpf.addEventListener("animationstart", ()=>{
-      console.log("WPF animation started");
-    });
-
-    wpf.addEventListener("animationend", (evt)=>{
-      console.log("WPF animation ended " + JSON.stringify(evt));
-    });
+     if (!elm || !wpf) return;
 
     elm.addEventListener("mouseenter", ()=>{
-       wpf?.style.animation = 'fade-header-in .2s ease-in 0.1s 1 normal backwards';
-
+       wpf.style.animation = 'fade-header-in .2s ease-in 0.1s 1 normal backwards';
     });
 
     elm.addEventListener("mouseleave", ()=>{
-      wpf?.style.animation = 'fade-header-out 0.2s ease-in 0.1s 1 normal forwards';
+      wpf.style.animation = 'fade-header-out .2s ease-in 0.1s 1 normal forwards';
     })
   }
 

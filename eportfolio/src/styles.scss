@@ -6,6 +6,16 @@
 @import "../src/scss/fontawesome.scss";
 @import "../src/scss/solid.scss";
 
+body, html{
+  height: 100%;
+}
+
+footer{
+ flex-shrink: 0;
+}
+.has-footer{
+  padding-bottom: 220px;
+}
 .patterned {
   background-color: #201e23;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23fefeff' fill-opacity='0.17' fill-rule='evenodd'/%3E%3C/svg%3E");
@@ -44,10 +54,10 @@ background-attachment: fixed;
 background-size: cover;
 }
 ul li{
-  line-height: 2em;
+  line-height: 1.1;
 }
 #menu ul li {
-  line-height: 3em;
+  line-height: 2;
 }
 
 #menu ul {
@@ -96,7 +106,7 @@ ul li{
   display: block;
   font-weight: 500;
   font-size: 1em;
-  line-height: 1.4em;
+  line-height: 1.1;
   padding: 0.5em 0 0.5em 0;
 }
 .opener ~ .collapsible {
@@ -287,7 +297,7 @@ span.Cgrapefruit {
   color: #757575;
   padding-left: 16px;
   height: 1.5rem;
-  line-height: 1.5rem;
+  line-height: 1.1;
   letter-spacing: 0.4;
   display: inline-block;
 }
@@ -462,7 +472,6 @@ ul.table-of-contents {
 .reference-1 img {
   max-width: 200px;
   max-height: 200px;
-  vertical-align: middle;
   margin: 0 auto;
 }
 .reference-1 .author {
@@ -498,7 +507,6 @@ ul.table-of-contents {
   font-family: "Font Awesome 5 Free";
   display: inline-block;
   position: relative;
-  vertical-align: middle;
   top: 50%;
   transform: translate(0, -50%);
 }
@@ -515,7 +523,7 @@ ul.table-of-contents {
   transition-delay: 0.1s;
 }
 .tutor-1:hover .tutor-1-profile{
-  filter: drop-shadow(10px 50px 19px rgba(0, 0, 0, 0.4));
+  filter: grayscale(0) drop-shadow(10px 50px 19px rgba(0, 0, 0, 0.4));
   transform-origin: bottom right;
   transform: scale(1.01) rotateZ(0deg);
 }
@@ -718,7 +726,7 @@ ol.li-spaced-sm li {
   color: #9096a4;
 }
 .markdown{
-  line-height: 1.1em;
+  line-height: 1.5;
   max-width: 80ch;
   min-height: 200px;
   margin: 0 auto;
@@ -726,7 +734,7 @@ ol.li-spaced-sm li {
 }
 .markdown h1, .markdown h2, .markdown h3, .markdown h4{
   letter-spacing: 0;
-  line-height: 36px;
+  line-height: 1.6;
   margin: 0;
   margin-top: 1.95em;
   font-size: 2em;
@@ -755,20 +763,21 @@ ol.li-spaced-sm li {
   font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
   color: rgba(41, 41, 41, 1);
 }
-.markdown p{
+.markdown p,
+.markdown span{
   margin-top: 0.86em;
   font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
   color: rgba(41, 41, 41, 1);
   font-weight: 400;
   text-justify: auto;
   text-align: justify;
-  line-height: 1.5em;
+  line-height: 1.5;
 }
 .markdown h1, .markdown h2 {
   color:hsl(0, 0%, 36%);
 }
 .markdown p.bsod::before{
-  line-height: 1em;
+  line-height: 1;
   font-size: 4em;
   color: lightblue;
   font-weight: 900;
@@ -777,7 +786,7 @@ ol.li-spaced-sm li {
   padding: 20px 10px 20px 0;
 }
 .markdown p.bsod2::before{
-  line-height: 1em;
+  line-height: 1;
   font-size: 4em;
   color: lightcoral;
   font-weight: 900;
@@ -972,12 +981,9 @@ p.module-icon::before{
 }
 p.drop-letter::first-letter{
   color: #903;
-  float: left;
-    font-size: 75px;
-  line-height: 60px;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-left: 3px;
+    float: left;
+    font-size: 50px;
+    line-height: 1.1;
 }
 .pill{
   position: absolute;
@@ -995,7 +1001,7 @@ p.drop-letter::first-letter{
   color:#868686;
   text-align: center;
   margin:0;
-  line-height: 1.8em;
+  line-height: 1.1;
 }
 #svgcontainer {
   height: 30vh;
@@ -1006,54 +1012,63 @@ p.drop-letter::first-letter{
   width: 100%;
   height: 100%;
 }
+$wallpaper-height: 100px;
+$footer-height: 150px;
+$profile-img-width: 120px;
+$profile-img-height: 120px;
+
 .about{
-  width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 25px;
+  width: 120px;
   transform-origin: bottom right;
   transition: all 0.2s ease-in-out;
-  transform: scale(0.9) rotateZ(4deg);
-  align-self: center;
+  transform: translateX(-50%) scale(0.9) rotateZ(4deg);
   filter: drop-shadow(6px 6px 8px rgba(0, 0, 0, 0.7));
+
+  -moz-transform-origin: bottom right;
+  -moz-transition: all 0.2s ease-in-out;
+  -moz-transform: translateX(-50%) scale(0.9) rotateZ(4deg);
 }
 .about:hover{
-  transform: scale(0.97) rotateZ(0deg);
+  transform: translateX(-50%) scale(0.97) rotateZ(0deg);
+  -moz-transform: translateX(-50%) scale(0.97) rotateZ(0deg);
   filter: drop-shadow(2px 9px 12px rgba(0, 0, 0, 0.5));
 }
 .about:hover .about-profile{
-
   filter: grayscale(0);
 }
 .about-profile{
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 120px;
+  min-height: 120px;
   display: inline-block;
   border-radius: 2em;
   border: 6px solid red;
   position: relative;
-  filter: grayscale(50%);
+  filter: grayscale(60%);
   transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
 }
 .wallpaper-1{
   background-image: url(./assets/images/wallpaper_3a.jpg);
   background-size: cover;
-  top: 0;
-  width: 99vw;
-  height: 200px;
+  height: 100px;
   background-position: bottom;
 }
 .wallpaper-header{
-  top: 0;
-    position: absolute;
-    display: inline-block;
-    width: 99vw;
-    height: 200px;
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 50px;
 }
 .wallpaper-filter{
-
-    width: 99vw;
-    height: 200px;
-    border-bottom: 3px solid;
-    position: absolute;
-    transition-property: backdrop-filter;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  border-bottom: 3px solid;
+  transition-property: backdrop-filter;
+  -moz-transition-property: backdrop-filter;
 }
 @keyframes fade-header-in{
   from{
@@ -1070,4 +1085,51 @@ p.drop-letter::first-letter{
   to{
     backdrop-filter: grayscale(60%) blur(10px);
   }
+}
+.about-me{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.about-me-content{
+  flex: 1 0 auto;
+}
+.article-summary::before{
+    content: 'Quick summary ↬ ';
+    display: inline;
+    font-style: normal;
+    letter-spacing: 2px;
+    font-size: .75em;
+    margin: 0;
+    font-weight: 600;
+    color: #d33a2c;
+    text-transform: uppercase;
+}
+.article-points::before{
+  content: 'Takeaway points ↬ ';
+  display: inline;
+  font-style: normal;
+  letter-spacing: 2px;
+  font-size: .75em;
+  margin: 0;
+  font-weight: 600;
+  color: #d33a2c;
+  text-transform: uppercase;
+}
+.article-points li {
+  list-style-type: decimal-leading-zero;
+}
+.article-points li {
+  padding-top:0.5em;
+}
+.article-summary{
+  border-bottom: 1px solid #c1c0c0;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.article-summary p,
+.article-summary span,
+.article-points p,
+.article-points span{
+  margin-top: 0;
 }
